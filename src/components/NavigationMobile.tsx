@@ -56,7 +56,7 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
     const [showDialog, setShowDialog] = useState<boolean>(false);
 
     const buttonStyling = {height: "80px", fontSize: "20px", width: "100%", marginBottom: "20px", fontFamily: "Plus Jakarta Sans, Sans Serif"};
-
+    const resumeLink = "https://drive.google.com/file/d/1ljXq52D8t4RnaYdnXClneUesSXcBybm8/view?usp=sharing"
     return (
         <div ref={appbar} className={getAppBarClass()}>
             <div id="hamburger-wrapper">
@@ -73,6 +73,7 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
                     <Button color={"secondary"} variant="contained" onClick={() => scroll("experience")} sx={buttonStyling}>Experience</Button>
                     <Button color={"secondary"} variant="contained" onClick={() => scroll("projects")} sx={buttonStyling}>Projects</Button>
                     <Button color={"secondary"} variant="contained" onClick={() => scroll("about")} sx={buttonStyling}>About</Button>
+                    <Button color={"secondary"} variant="contained" onClick={() => window.open(resumeLink)} sx={buttonStyling}>Resume</Button>
                 </DialogContent>
             </Dialog>
         </div>

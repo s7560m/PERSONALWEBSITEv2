@@ -49,13 +49,15 @@ function Navigation({navBtnEventListener}: AppProps) {
         // dispatch callback to allow app to scroll to component
         navBtnEventListener(section);
     }
+
+    const resumeLink = "https://drive.google.com/file/d/1ljXq52D8t4RnaYdnXClneUesSXcBybm8/view?usp=sharing"
     return (
         <div ref={appbar} className={getAppBarClass()}>
             <Button onClick={() => scroll("home")} sx={buttonStyle} className={"button"} color={"info"}>Home</Button>
             <Button onClick={() => scroll("experience")} sx={buttonStyle} color={"info"}>Experience</Button>
             <Button onClick={() => scroll("projects")} sx={buttonStyle} color={"info"}>Projects</Button>
             <Button onClick={() => scroll("about")} sx={buttonStyle} color={"info"}>About Me</Button>
-            <Button sx={buttonStyle} color={"info"}>Resume</Button>
+            <Button onClick={() => window.open("https://drive.google.com/file/d/1ljXq52D8t4RnaYdnXClneUesSXcBybm8/view?usp=sharing")} sx={buttonStyle} color={"info"}>Resume</Button>
             <div id="nav-icon-wrapper" ref={iconWrapperRef} className={getIconClass()}>
                 <IconButton onClick={() => window.open("mailto:haydenhoffman@gmail.com")} color={"info"} sx={iconButtonStyle}>
                     <Email/>
