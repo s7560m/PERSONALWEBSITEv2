@@ -1,0 +1,89 @@
+.app-bar {
+    position: fixed;
+    width: calc(100vw - 64px);
+    z-index: 2;
+    top: 0px;
+    height: 64px;
+    backdrop-filter: blur(0px);
+    padding: 16px 32px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+@keyframes app-bar-bluranimation {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+}
+
+@keyframes app-bar-unbluranimation {
+    from {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+}
+.app-bar-overlay {
+    animation: app-bar-bluranimation 1s forwards;
+}
+
+.app-bar-unoverlay {
+    animation: app-bar-unbluranimation 1s forwards;
+}
+
+.button {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+#nav-icon-wrapper {
+    /*filter: blur(40px);*/
+    /*display: none;*/
+    opacity: 0;
+    height: max-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    right: 10%;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        /*filter: blur(40px);*/
+    }
+    to {
+        opacity: 100;
+        /*filter: blur(0px);*/
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 100;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.init-icon-class {
+    opacity: 0;
+    visibility: hidden;
+}
+.hide-icon-wrapper {
+    animation: fadeout 1s forwards;
+}
+.show-icon-wrapper {
+    animation: fadein 1s forwards;
+}

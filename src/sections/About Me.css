@@ -1,0 +1,115 @@
+#about-me {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/personal-site-57ec2.appspot.com/o/images%2Ffancy-pants.jpg?alt=media&token=ba8dff08-eda7-4965-a01c-7ae6a36f2348");
+    /*height: 100vh;*/
+    min-height: 100vh;
+    padding-bottom: 50px;
+    /*height: 100vh;*/
+}
+
+#header-aboutme {
+    margin: 0;
+    width: max-content;
+    /*position: relative;*/
+    font-size: 2rem;
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    backdrop-filter: blur(4px);
+    font-weight: bold;
+}
+
+#about-me-overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    filter: blur(4px);
+    z-index: 1;
+}
+
+#header-wrapper-aboutme {
+    position: relative;
+    top: 20vh;
+    left: 15%;
+    width: 85%;
+    /*margin-bottom: 40px;*/
+}
+
+#about-me-card {
+    /*position: relative;*/
+    /*top: 30%;*/
+    margin-top: 30vh;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    /*height: 80vh;*/
+
+}
+
+#about-me-text {
+    /*position: relative;*/
+    margin-left: 30px;
+    width: 80%;
+    height: max-content;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 20px;
+    backdrop-filter: blur(8px);
+    padding: 10px 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#about-me-img {
+    height: 300px;
+    width: auto;
+}
+
+#about-me-card-content {
+    display: flex;
+    flex-direction: row;
+}
+
+#mac-buttons {
+
+}
+
+.mac-button {
+    width: max-content;
+}
+
+/*#about-me-header {*/
+/*    color: black;*/
+/*    font-family: 'Plus Jakarta Sans', sans-serif;*/
+/*    font-size: 16px;*/
+/*    height: max-content;*/
+/*    padding-top: 5px;*/
+/*    position: relative;*/
+/*    left: calc(15% + 20px + 0.5rem);*/
+/*}*/
+
+@media screen and (max-width: 973px) {
+    #about-me-card {
+        width: 80%;
+    }
+
+    #about-me-card-content {
+        flex-direction: column;
+    }
+
+    #about-me-text {
+        margin: auto;
+        width: 90%;
+        padding-top: 20px;
+        font-size: 18px;
+    }
+
+    #about-me-img {
+        height: auto;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #about-me-text {
+        font-size: 14px;
+    }
+}
