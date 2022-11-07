@@ -86,7 +86,7 @@
 /*    left: calc(15% + 20px + 0.5rem);*/
 /*}*/
 
-@media screen and (max-width: 973px) {
+@media screen and (max-width: 1024px) {
     #about-me-card {
         width: 80%;
     }
@@ -99,12 +99,18 @@
         margin: auto;
         width: 90%;
         padding-top: 20px;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     #about-me-img {
         height: auto;
         width: auto;
+    }
+    #header-wrapper-aboutme {
+        width: 85vw;
+        margin: auto;
+        left: 0;
+        /*left: calc(15vw / 2);*/
     }
 }
 
@@ -119,9 +125,6 @@
         font-size: 28px;
     }
     #about-me-card {
-        width: 90%;
-    }
-    #header-wrapper-aboutme {
-        left: 10%;
+        width: 85vw;
     }
 }

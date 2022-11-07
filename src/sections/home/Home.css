@@ -68,10 +68,11 @@
         font-size: 30px;
     }
     #divider {
-        height: 6px;
+        height: 20px;
+        opacity: 0.4;
         margin-left: auto;
         margin-right: auto;
-        width: 100%;
+        width: calc(100% - 2em);
     }
     #header-wrapper {
         width: 80vw;
@@ -80,6 +81,8 @@
     }
     #icons-wrapper {
         top: 30vh;
+        left: 7px;
+        width: fit-content;
         margin-bottom: 5vh;
         height: 100vh;
         margin-left: auto;

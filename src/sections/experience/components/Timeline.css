@@ -8,5 +8,6 @@
     .timeline {
         left: 0;
         margin: auto;
+        width: fit-content;
     }
 }

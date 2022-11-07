@@ -1,7 +1,8 @@
 .timeline-item {
     display: flex;
     flex-direction: row;
-    width: 60vw;
+    /*width: 60vw;*/
+    width: fit-content;
     padding-bottom: 40px;
 }
 .timeline-item-wrapper {
