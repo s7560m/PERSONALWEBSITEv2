@@ -52,9 +52,11 @@ export default function Home() {
         marginRight: MARGIN_SIZE
     }
 
-    return (<div id="canvas-wrapper" style={canvasWrapperStyle}>
+    const canvasWrapperRef = useRef<HTMLDivElement>(null);
+
+    return (<div ref={canvasWrapperRef} id="canvas-wrapper" style={canvasWrapperStyle}>
         {/*<canvas id="canvas-basic" ref={canvasRef} />*/}
-        <Landing/>
+        <Landing canvasWrapperRef={canvasWrapperRef} />
         <div id="header-wrapper">
             <p id="header">HAYDEN HOFFMAN</p>
             <div id="divider"/>

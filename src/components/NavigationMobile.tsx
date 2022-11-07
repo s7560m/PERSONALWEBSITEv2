@@ -24,11 +24,11 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
 
     const appbar = useRef<HTMLDivElement>(null);
     function getAppBarClass() {
-        if (scrollPosition > 0) return "app-bar app-bar-overlay";
+        if (scrollPosition > 0) return "app-bar app-bar-mobile app-bar-overlay";
         if (scrollPosition === 0 && appbar.current?.className.includes("app-bar-overlay")) {
-            return "app-bar app-bar-unoverlay"
+            return "app-bar app-bar-mobile app-bar-unoverlay"
         }
-        return "app-bar"
+        return "app-bar app-bar-mobile"
     }
 
     const iconWrapperRef = useRef<HTMLDivElement>(null);
@@ -61,7 +61,7 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
         <div ref={appbar} className={getAppBarClass()}>
             <div id="hamburger-wrapper">
                 <IconButton onClick={() => setShowDialog(true)} color={"info"} sx={iconButtonStyle}>
-                    <Menu style={{fontSize: "40px"}}/>
+                    <Menu style={{fontSize: "28px"}}/>
                 </IconButton>
             </div>
             <Dialog open={showDialog} onClose={() => setShowDialog(false)}>

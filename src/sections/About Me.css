@@ -99,7 +99,7 @@
         margin: auto;
         width: 90%;
         padding-top: 20px;
-        font-size: 18px;
+        font-size: 14px;
     }
 
     #about-me-img {
@@ -111,5 +111,17 @@
 @media screen and (max-width: 450px) {
     #about-me-text {
         font-size: 14px;
+        padding-left: 0px;
+        padding-right: 0px;
+        word-break: break-word;
+    }
+    #header-aboutme {
+        font-size: 28px;
+    }
+    #about-me-card {
+        width: 90%;
+    }
+    #header-wrapper-aboutme {
+        left: 10%;
     }
 }

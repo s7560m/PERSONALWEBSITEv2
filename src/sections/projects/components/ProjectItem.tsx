@@ -1,5 +1,5 @@
 import './ProjectItem.css'
-import {Card, CardContent, Paper} from "@mui/material";
+import {Button, Card, CardContent, Paper} from "@mui/material";
 import Project from "../../../interfaces/ProjectInterface";
 
 interface AppProps {
@@ -19,6 +19,9 @@ export default function ProjectItem({project}: AppProps) {
                 <div className="project-item-title">{project.title}</div>
                 <div className="project-item-link">{project.link}</div>
                 <div className="project-item-description">{project.description}</div>
+            </div>
+            <div className="project-actions">
+                    <Button onClick={() => window.open(project.link)} variant="outlined" color={"info"}>Visit Project</Button>
             </div>
         </Paper>
     </div>

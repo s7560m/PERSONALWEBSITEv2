@@ -41,10 +41,14 @@
 @media screen and (max-width: 973px) {
     #divider-experience {
         width: 80vw;
+        height: 4px;
     }
     #header-wrapper-experience {
         margin-left: auto;
         margin-right: auto;
         width: fit-content;
+    }
+    #header-experience {
+        font-size: 28px;
     }
 }

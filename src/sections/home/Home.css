@@ -57,3 +57,52 @@
     color: white;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
+@media screen and (max-width: 450px) {
+    #header {
+        font-size: 34px;
+        /*text-align: justify;*/
+    }
+
+    #sub-header {
+        font-size: 30px;
+    }
+    #divider {
+        height: 6px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    #header-wrapper {
+        width: 80vw;
+        left: 10%;
+        text-align: center;
+    }
+    #icons-wrapper {
+        top: 30vh;
+        margin-bottom: 5vh;
+        height: 100vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #header {
+        font-size: 30px;
+    }
+
+    #sub-header {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #header {
+        font-size: 26px;
+    }
+
+    #sub-header {
+        font-size: 22px;
+    }
+}

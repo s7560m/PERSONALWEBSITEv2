@@ -85,8 +85,8 @@ function App() {
           <ThemeProvider theme={theme}>
             <div className="App">
                 <div>
-                    {window.innerWidth > 750 && <Navigation navBtnEventListener={scrollToComponent}/>}
-                    {window.innerWidth <= 750 && <NavigationMobile navBtnEventListener={scrollToComponent}/> }
+                    {window.innerWidth > 750 && <Navigation navBtnEventListener={(section: string) => scrollToComponent(section, true)}/>}
+                    {window.innerWidth <= 750 && <NavigationMobile navBtnEventListener={(section: string) => scrollToComponent(section, false)}/> }
                 </div>
                 <div ref={homeRef}>
                     <Home/>

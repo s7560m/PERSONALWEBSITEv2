@@ -21,21 +21,6 @@
     border: 1px white dashed;
 }
 
-@media screen and (max-width: 970px) {
-    .timeline-item {
-        flex-direction: column-reverse;
-    }
-    .timeline-item-wrapper {
-        width: 80vw;
-    }
-    .date-wrapper {
-        padding-left: 30px;
-        left: 0;
-        width: 80vw;
-    }
-}
-
-
 
 .timeline-item-header {
     width: 100%;
@@ -59,6 +44,36 @@
     color: white;
     position: relative;
     /*left: 100px;*/
+}
+
+@media screen and (max-width: 970px) {
+    .timeline-item {
+        flex-direction: column-reverse;
+    }
+    .timeline-item-wrapper {
+        width: 80vw;
+    }
+    .timeline-item-header {
+
+    }
+    .date-wrapper {
+        padding-left: 30px;
+        left: 0;
+        width: calc(80vw - 2px);
+    }
+    #title-header {
+        font-size: 20px;
+    }
+    #company-header {
+        font-size: 16px;
+    }
+    #description-text {
+        font-size: 14px;
+    }
+    .date-wrapper {
+        font-size: 12px;
+    }
+
 }
 
 

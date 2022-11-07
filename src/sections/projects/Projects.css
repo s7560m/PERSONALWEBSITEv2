@@ -122,5 +122,9 @@
     }
     #divider-projects {
         width: 80vw;
+        height: 4px;
+    }
+    #header-projects {
+        font-size: 28px;
     }
 }

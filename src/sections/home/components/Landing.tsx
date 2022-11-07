@@ -1,21 +1,28 @@
-import {memo, useEffect, useRef, useState} from "react";
+import {memo, Ref, RefObject, useEffect, useRef, useState} from "react";
 // @ts-ignore
 import * as Granim from "granim"
-function Landing() {
+
+interface AppProps {
+    canvasWrapperRef: RefObject<HTMLDivElement>
+}
+
+function Landing({canvasWrapperRef}: AppProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
+
         handleResize();
+        window.addEventListener('resize', handleResize)
 
         function handleResize() {
-            if (canvasRef.current) {
+            if (canvasRef.current && canvasWrapperRef.current) {
+                console.log(canvasWrapperRef.current.clientWidth, canvasWrapperRef.current.clientHeight);
                 const canvas = canvasRef.current;
                 // resize canvas
-                canvas.height = window.innerHeight;
-                canvas.width = window.innerWidth;
+                canvas.height = canvasWrapperRef.current.clientHeight;
+                canvas.width = canvasWrapperRef.current.clientWidth;
             }
         }
-        window.addEventListener('resize', handleResize)
 
         const granimInstance = new Granim({
             element: '#canvas-basic',
@@ -39,7 +46,9 @@ function Landing() {
             },
             transitionSpeed: 4000
         });
-        return () => window.removeEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
     })
     return <canvas id="canvas-basic" ref={canvasRef} />
 }
