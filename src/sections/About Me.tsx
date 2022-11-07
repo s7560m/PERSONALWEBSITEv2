@@ -40,7 +40,7 @@ export default function AboutMe({setAboutMeVisible}: {setAboutMeVisible: Functio
                 <div id="about-me-card-content">
                     <img id="about-me-img" src="https://firebasestorage.googleapis.com/v0/b/personal-site-57ec2.appspot.com/o/images%2Fthis%20is%20me.png?alt=media&token=c7072754-b79b-4e35-8f3f-e38849bc02ba" alt="Picture of me on mountain in the Azores."/>
                     <p id="about-me-text">
-                    Hey I'm Hayden! I'm a 23-year old Computer Science Graduate from Western University who happens to be interested in all things tech, such as building full-stack websites like the one you see here. In my spare time, I do music production, bouldering, working out, board sports, making new friends and travelling. Want to connect and/or grab a coffee with me? Feel free to reach out at haydennhoffman@gmail.com!</p>
+                    Hey I'm Hayden! I'm a 23-year old Computer Science Graduate from Western University who happens to be interested in all things tech, such as building full-stack websites like the one you see here. In my spare time, I do music production, bouldering, working out, board sports, making new friends and travelling. Want to connect and/or grab a coffee with me? Feel free to reach out at <a href="mailto:haydenhoffman@gmail.com">haydennhoffman@gmail.com!</a></p>
                 </div>
             </CardContent>
         </Card>
