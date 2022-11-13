@@ -83,7 +83,14 @@ export default function Projects({setValue, setShowCircularProgress}: AppProps) 
         }
     }, [isVisible])
 
-    return (<div ref={div} className={isVisible ? "projects-show" : "projects-hide"} id="projects">
+    function getProjectsWrapperClass() {
+        let init = "projects-init"
+        if (window.innerWidth <= 768) return "projects-mobile";
+        if (isVisible) return "projects-show " + init;
+        return "projects-hide " + init;
+    }
+
+    return (<div ref={div} className={getProjectsWrapperClass()} id="projects">
         <div id="header-wrapper-projects">
             <p id="header-projects">PROJECTS.</p>
             {/*<div style={{height: "20px", width: "120%", right: "10px", top: "10px", position: "relative", backgroundColor: "white"}}/>*/}

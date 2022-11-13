@@ -34,12 +34,14 @@ export default function Home() {
 
     useEffect(() => {
         // calculate ratio
-        let ratio = scrollPos / window.innerHeight;
-        let newBrightness = 100 * ratio;
-        let newBlur = 10 * ratio;
-        setCanvasWrapperStyle({
-            filter: `brightness(${100 - newBrightness}%) blur(${newBlur}px)`
-        })
+        if (window.innerWidth > 450) {
+            let ratio = scrollPos / window.innerHeight;
+            let newBrightness = 100 * ratio;
+            let newBlur = 10 * ratio;
+            setCanvasWrapperStyle({
+                filter: `brightness(${100 - newBrightness}%) blur(${newBlur}px)`
+            })
+        }
     }, [scrollPos])
 
     const iconSize = {

@@ -54,10 +54,6 @@ function App() {
             return "init-circular-progress-class"
         }
 
-        useEffect(() => {
-            console.log(showCircularProgress);
-        }, [showCircularProgress])
-
         const homeRef = useRef<HTMLDivElement>(null);
         const experienceRef = useRef<HTMLDivElement>(null);
         const projectRef = useRef<HTMLDivElement>(null);

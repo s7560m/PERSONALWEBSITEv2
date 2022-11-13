@@ -7,11 +7,11 @@ export default function Experience() {
         {
             title: "Coding Instructor",
             company: "Connect to Canada",
-            description: "When I was rehired at Connect to Canada, I was tasked with teaching various subject matter, such as Scratch, Python, Web Development, and Robotics (using the Arduino) over video call. I organized lesson plans, assignments, and quizzes to continually test students' comprehensions in the subject matter.",
-            dateRange: "July 2021 - Present"
+            description: "When I was rehired at Connect to Canada, I was tasked with teaching various programming languages, such as Scratch, Python, Web Development, and Robotics (using the Arduino) over video call. I organized lesson plans, assignments, and quizzes, and continually tested students on the subject matter.",
+            dateRange: "July 2021 - September 2022"
         },
         {
-            title: "Software Engineering Intern",
+            title: "Software Engineer",
             company: "OddJob Handyman Services",
             description: "OddJob.ca is a professional handyman company that deals with jobs such as installing sinks, repairing doors, and more. My job was to design a web-based internal pricing tool that would let OddJob staff create handyman quotes without the need to manually fill out quotes in getjobber.com.",
             dateRange: "July 2020 - September 2020"

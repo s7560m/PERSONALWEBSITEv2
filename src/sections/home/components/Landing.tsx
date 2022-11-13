@@ -16,7 +16,6 @@ function Landing({canvasWrapperRef}: AppProps) {
 
         function handleResize() {
             if (canvasRef.current && canvasWrapperRef.current) {
-                console.log(canvasWrapperRef.current.clientWidth, canvasWrapperRef.current.clientHeight);
                 const canvas = canvasRef.current;
                 // resize canvas
                 canvas.height = canvasWrapperRef.current.clientHeight;

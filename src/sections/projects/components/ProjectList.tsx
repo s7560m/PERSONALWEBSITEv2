@@ -22,6 +22,8 @@ function ProjectList({projectArray, setCurrentProjectNum}: AppProps) {
         setScrollPos(window.scrollY);
 
         // adjusts progressbar for projects
+        // BUG: Some projects are too large for the viewport
+        // TODO: Fix this bug
         projectRefs.current.forEach((ref, index) => {
             if (isInViewport(ref)) {
                 setCurrentProjectNum(index + 1);
@@ -33,8 +35,8 @@ function ProjectList({projectArray, setCurrentProjectNum}: AppProps) {
 
         // initialize animation library
         AOS.init({
-            offset: 200,
-            duration: 600,
+            offset: 0,
+            duration: 300,
             easing: 'ease-in-quart',
         });
 
@@ -46,9 +48,10 @@ function ProjectList({projectArray, setCurrentProjectNum}: AppProps) {
     // return a list of projects
     return <div id="projects-wrapper">
         {projectArray.map((project, index) => {
-            return <div ref={el => projectRefs.current[index] = el as HTMLDivElement} key={index} data-aos="fade" className="projects-wrapper">
+            return <div ref={el => projectRefs.current[index] = el as HTMLDivElement} key={index} data-aos={window.innerWidth > 768 ? "fade" : ""} className="projects-wrapper">
                 <ProjectItem project={project}/>
             </div>
+
         })}
     </div>
 }

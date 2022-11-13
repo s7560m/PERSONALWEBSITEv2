@@ -6,6 +6,8 @@
     /*background-repeat: repeat;*/
     padding-bottom: 80px;
     background-size: initial;
+    /*opacity: 0;*/
+    /*filter: blur(20px);*/
     /*backdrop-filter: brightness(0%);*/
     /*overflow: hidden;*/
 }
@@ -23,6 +25,11 @@
     }
 }
 
+.projects-init {
+    opacity: 0;
+    filter: blur(20px);
+}
+
 .projects-show {
     animation: show-project 2s forwards;
 }
@@ -30,6 +37,11 @@
 .projects-hide {
     opacity: 0;
     filter: blur(20px);
+}
+
+.projects-mobile {
+    opacity: 1;
+    filter: blur(0px);
 }
 
 #header-projects {

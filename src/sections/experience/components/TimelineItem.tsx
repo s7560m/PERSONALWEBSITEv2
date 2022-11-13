@@ -19,8 +19,8 @@ export default function TimelineItem({timelineItem}: AppProps) {
     return <div className="timeline-item">
         <div className="timeline-item-wrapper">
             <div className="timeline-item-header">
-                <h1 id="title-header" className="header">{timelineItem.title}</h1>
-                <h2 id="company-header" className="header">{timelineItem.company}</h2>
+                <h1 id="title-header" className="header">{timelineItem.company}</h1>
+                <h2 id="company-header" className="header">{timelineItem.title}</h2>
             </div>
             <div className="timeline-item-body">
                 <h3 id="description-text" className="header header-2">{timelineItem.description}</h3>
