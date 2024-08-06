@@ -9,46 +9,38 @@ import "aos/dist/aos.css";
 
 interface AppProps {
     projectArray: Array<Project>,
-    setCurrentProjectNum: Function
 
 }
 
-function ProjectList({projectArray, setCurrentProjectNum}: AppProps) {
+function ProjectList({projectArray}: AppProps) {
     const [selectedIndex, setSelectedIndex] = useState<number>(0);
     const [scrollPos, setScrollPos] = useState<number>(0);
     const projectRefs = useRef<Array<HTMLDivElement>>([]);
 
-    function handleScroll() {
-        setScrollPos(window.scrollY);
-
-        // adjusts progressbar for projects
-        // BUG: Some projects are too large for the viewport
-        // TODO: Fix this bug
-        projectRefs.current.forEach((ref, index) => {
-            if (isInViewport(ref)) {
-                setCurrentProjectNum(index + 1);
-            }
-        })
-    }
-
-    useEffect(() => {
-
-        // initialize animation library
-        AOS.init({
-            offset: 0,
-            duration: 300,
-            easing: 'ease-in-quart',
-        });
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => window.removeEventListener('scroll', handleScroll);
-    })
+    // function handleScroll() {
+    //     // adjusts progressbar for projects
+    //     // BUG: Some projects are too large for the viewport
+    //     // TODO: Fix this bug
+    // }
+    //
+    // useEffect(() => {
+    //
+    //     // initialize animation library
+    //     AOS.init({
+    //         offset: 0,
+    //         duration: 300,
+    //         easing: 'ease-in-quart',
+    //     });
+    //
+    //     window.addEventListener('scroll', handleScroll);
+    //
+    //     return () => window.removeEventListener('scroll', handleScroll);
+    // })
 
     // return a list of projects
     return <div id="projects-wrapper">
         {projectArray.map((project, index) => {
-            return <div ref={el => projectRefs.current[index] = el as HTMLDivElement} key={index} data-aos={window.innerWidth > 768 ? "fade" : ""} className="projects-wrapper">
+            return <div ref={el => projectRefs.current[index] = el as HTMLDivElement} key={index} className="projects-wrapper">
                 <ProjectItem project={project}/>
             </div>
 

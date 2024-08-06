@@ -1,7 +1,9 @@
-import {AppBar, Button, Dialog, DialogContent, DialogTitle, IconButton, Toolbar} from "@mui/material";
+import {AppBar, Button, Dialog, DialogContent, DialogTitle, IconButton, Paper, Toolbar} from "@mui/material";
 import './Navigation.css'
 import {Email, GitHub, LinkedIn, Menu} from "@mui/icons-material";
 import {memo, useEffect, useRef, useState} from "react";
+import App from "../App";
+import {motion, useScroll, useTransform} from "framer-motion";
 
 interface AppProps {
     navBtnEventListener: Function
@@ -9,58 +11,27 @@ interface AppProps {
 
 function NavigationMobile({navBtnEventListener}: AppProps) {
 
-    const buttonStyle = {fontFamily: "Plus Jakarta Sans"}
-    const iconButtonStyle = {float: "right", fontSize: "40px"}
-
-    const [scrollPosition, setScrollPosition] = useState<number>(0);
-    const handleScroll = () => {
-        setScrollPosition(window.scrollY);
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll);
-    })
-
-    const appbar = useRef<HTMLDivElement>(null);
-    function getAppBarClass() {
-        if (scrollPosition > 0) return "app-bar app-bar-mobile app-bar-overlay";
-        if (scrollPosition === 0 && appbar.current?.className.includes("app-bar-overlay")) {
-            return "app-bar app-bar-mobile app-bar-unoverlay"
-        }
-        return "app-bar app-bar-mobile"
-    }
-
-    const iconWrapperRef = useRef<HTMLDivElement>(null);
-
-    function getIconClass() {
-        // scroll pos greater than 3/4s of window inner height
-        if (scrollPosition > 3 * window.innerHeight / 4) return "show-icon-wrapper";
-
-        if (["show-icon-wrapper", "hide-icon-wrapper"].indexOf(iconWrapperRef.current?.className as string) > -1) {
-            return "hide-icon-wrapper"
-        }
-        // iconwrapperref should not be null here
-        return "init-icon-class"
-
-    }
+    const iconButtonStyle = {fontSize: "40px"}
 
     function scroll(section: string) {
         // dispatch callback to allow app to scroll to component
         navBtnEventListener(section);
-        console.log(section);
         setShowDialog(false);
         // setTimeout(() => setShowDialog(false), 100);
     }
+
+    const {scrollY} = useScroll();
+    const opacity = useTransform(scrollY, [0, window.innerHeight * 0.5, window.innerHeight], [0, 0, 1])
 
     const [showDialog, setShowDialog] = useState<boolean>(false);
 
     const buttonStyling = {height: "80px", fontSize: "20px", width: "100%", marginBottom: "20px", fontFamily: "Plus Jakarta Sans, Sans Serif"};
     const resumeLink = "https://drive.google.com/file/d/1ljXq52D8t4RnaYdnXClneUesSXcBybm8/view?usp=sharing"
     return (
-        <div ref={appbar} className={getAppBarClass()}>
+        <div style={{position: "fixed", top: 0, zIndex: 5, width: "100%"}}>
+            <motion.div style={{zIndex: 0, height: 44, position: "fixed", top: 0, background: "white", width: "100%", opacity, boxShadow: "0 0 17px 0px rgba(0, 0, 0, 0.2)"}}/>
             <div id="hamburger-wrapper">
-                <IconButton onClick={() => setShowDialog(true)} color={"info"} sx={iconButtonStyle}>
+                <IconButton onClick={() => setShowDialog(true)} sx={iconButtonStyle}>
                     <Menu style={{fontSize: "28px"}}/>
                 </IconButton>
             </div>

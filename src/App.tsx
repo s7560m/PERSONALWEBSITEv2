@@ -1,4 +1,4 @@
-import React, {CSSProperties, FC, memo, ReactFragment, useEffect, useRef, useState} from 'react';
+import React, {CSSProperties, FC, memo, ReactFragment, useEffect, useLayoutEffect, useRef, useState} from 'react';
 import './App.css';
 // @ts-ignore
 import * as Granim from 'granim';
@@ -76,6 +76,10 @@ function App() {
                     break;
             }
         }
+
+        useLayoutEffect(() => {
+            window.scrollTo(0, 0);
+        }, [])
 
         return (
           <ThemeProvider theme={theme}>

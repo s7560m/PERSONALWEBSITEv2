@@ -16,34 +16,37 @@
 
 @media screen and (max-width: 970px) {
     .project-item-wrapper {
-        width: 85vw;
+        width: 90vw;
     }
 }
 
 .project-item-title {
-    color: white;
+    color: black;
     font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 24px;
-    padding-bottom: 5px;
+    /*font-size: 24px;*/
+    padding: 0 30px;
     font-weight: bold;
 }
 
 .project-item-link {
-    color: lightgrey;
+    color: dimgrey;
     font-size: 14px;
-    font-family: "Roboto", sans-serif;
+    padding: 0 30px 5px;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .project-content-wrapper {
-    padding: 16px;
+    /*padding: 16px;*/
 }
 
 .project-item-description {
-    font-family: "Roboto", sans-serif;
-    color: white;
-    font-size: 0.875rem;
-    padding-top: 16px;
+    color: black;
+    /*font-size: 0.875rem;*/
     line-height: 1.3;
+    background: #f1f1f1;
+    padding: 30px 30px;
+    margin: 20px 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .responsive-iframe {
@@ -59,8 +62,14 @@
     width: max-content;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
     .responsive-iframe {
         height: 200px;
+    }
+    .project-item-title {
+        font-size: 20px;
+    }
+    .project-item-description {
+        font-size: 14px;
     }
 }

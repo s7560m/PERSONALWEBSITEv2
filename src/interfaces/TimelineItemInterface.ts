@@ -3,4 +3,5 @@ export default interface TimelineItemInterface {
     title: string,
     company: string,
     description: string,
+    skills: string[]
 }

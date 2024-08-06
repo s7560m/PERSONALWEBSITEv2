@@ -1,8 +1,8 @@
 #about-me {
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/personal-site-57ec2.appspot.com/o/images%2Ffancy-pants.jpg?alt=media&token=ba8dff08-eda7-4965-a01c-7ae6a36f2348");
+    /*background-image: url("https://firebasestorage.googleapis.com/v0/b/personal-site-57ec2.appspot.com/o/images%2Ffancy-pants.jpg?alt=media&token=ba8dff08-eda7-4965-a01c-7ae6a36f2348");*/
     /*height: 100vh;*/
-    min-height: 100vh;
-    padding-bottom: 50px;
+    height: 80vh;
+    margin-top: 20vh;
     /*height: 100vh;*/
 }
 
@@ -11,13 +11,13 @@
     width: max-content;
     /*position: relative;*/
     font-size: 2rem;
-    color: white;
+    color: black;
     font-family: 'Plus Jakarta Sans', sans-serif;
     backdrop-filter: blur(4px);
     font-weight: bold;
 }
 
-#about-me-overlay {
+.about-me-overlay {
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -27,24 +27,26 @@
 
 #header-wrapper-aboutme {
     position: relative;
-    top: 20vh;
-    left: 15%;
+    /*top: 20vh;*/
+    top: 30px;
+    left: 150px;
     width: 85%;
     /*margin-bottom: 40px;*/
 }
 
-#about-me-card {
+.about-me-card {
     /*position: relative;*/
     /*top: 30%;*/
-    margin-top: 30vh;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+    /*margin-top: 30vh;*/
+    width: fit-content;
+    max-width: 700px;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
     /*height: 80vh;*/
 
 }
 
-#about-me-text {
+.about-me-text {
     /*position: relative;*/
     margin-left: 30px;
     width: 80%;
@@ -58,17 +60,17 @@
     margin-bottom: auto;
 }
 
-#about-me-img {
-    height: 300px;
+.about-me-img {
     width: auto;
+    max-width: 300px;
 }
 
-#about-me-card-content {
+.about-me-card-content {
     display: flex;
     flex-direction: row;
 }
 
-#mac-buttons {
+.mac-buttons {
 
 }
 
@@ -76,7 +78,7 @@
     width: max-content;
 }
 
-/*#about-me-header {*/
+/*.about-me-header {*/
 /*    color: black;*/
 /*    font-family: 'Plus Jakarta Sans', sans-serif;*/
 /*    font-size: 16px;*/
@@ -86,45 +88,42 @@
 /*    left: calc(15% + 20px + 0.5rem);*/
 /*}*/
 
-@media screen and (max-width: 1024px) {
-    #about-me-card {
-        width: 80%;
-    }
 
-    #about-me-card-content {
-        flex-direction: column;
-    }
-
-    #about-me-text {
-        margin: auto;
-        width: 90%;
-        padding-top: 20px;
-        font-size: 16px;
-    }
-
-    #about-me-img {
-        height: auto;
-        width: auto;
-    }
-    #header-wrapper-aboutme {
-        width: 85vw;
-        margin: auto;
-        left: 0;
-        /*left: calc(15vw / 2);*/
-    }
-}
-
-@media screen and (max-width: 450px) {
-    #about-me-text {
+@media screen and (max-width: 768px) {
+    .about-me-text {
         font-size: 14px;
         padding-left: 0px;
         padding-right: 0px;
         word-break: break-word;
+        width: 90%;
+        margin: auto;
     }
     #header-aboutme {
         font-size: 28px;
+        margin: auto;
+        width: fit-content;
     }
-    #about-me-card {
+    .about-me-card {
+        width: 90vw;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    #about-me {
+        margin-top: 10vh;
+        height: 90vh;
+    }
+    .about-me-img {
+        height: auto;
+        width: auto;
+        margin: auto;
+    }
+    #header-wrapper-aboutme {
         width: 85vw;
+        margin: 40px auto 20px;
+        top: 0;
+        left: 0;
+        /*left: calc(15vw / 2);*/
     }
+
+
 }

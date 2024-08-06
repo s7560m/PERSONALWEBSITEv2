@@ -7,16 +7,42 @@
     margin-bottom: 50px;
     /*top: 40%;*/
     /*position: relative;*/
-    background-color: black;
+    background-color: white;
     overflow: hidden;
+}
+
+.experience-skills {
+    width: 30%;
+    position: fixed;
+    top: 200px;
+    left: 60%;
+}
+
+.experience-skills h3 {
+    font-size: 2vw;
+}
+.experience-skills div {
+    font-size: 1.3vw;
 }
 
 #header-experience {
     margin: 0;
     position: relative;
     /*margin-top: 150px;*/
+    font-weight: bold;
     font-size: 2rem;
-    color: white;
+    color: black;
+    width: max-content;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+#header-experience-sideways {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg) translateY(-100px) translateX(-350px);
+    font-size: 2rem;
+    color: black;
     width: max-content;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
@@ -25,20 +51,37 @@
     /*position: relative;*/
     /*top: 20%;*/
     margin-top: 150px;
-    margin-left: 15%;
+    margin-left: 150px;
     width: fit-content;
     margin-bottom: 40px;
 }
 
 #divider-experience {
-    width: 60vw;
+    /*width: 60vw;*/
     height: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: white;
 }
 
-@media screen and (max-width: 973px) {
+.header {
+    padding-left: 30px;
+    color: black;
+    font-family: "Plus Jakarta Sans", sans-serif
+}
+
+.header-2 {
+    color: black;
+    padding: 30px 30px 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .experience-skills {
+        display: none;
+    }
+    #header-experience-sideways {
+        display: none;
+    }
     #divider-experience {
         width: 85vw;
         height: 4px;
@@ -50,5 +93,6 @@
     }
     #header-experience {
         font-size: 28px;
+        margin: auto;
     }
 }
