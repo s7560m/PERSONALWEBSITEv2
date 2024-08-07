@@ -101,7 +101,7 @@ export default function Experience() {
             <div className={"experience-skills"}>
             <motion.div ref={skillsRef} style={{opacity, display}} initial={{opacity: 0}}>
                 <Card elevation={5}>
-                    <CardContent sx={{padding: 5}}>
+                    <CardContent sx={{padding: 5, fontFamily: "Plus Jakarta Sans"}}>
                         <h3 style={{marginTop: 0}}>Got any questions about my experience?</h3>
                         <div style={{display: "flex", alignItems: "center"}}>If so, feel free to reach out at any of the links below.</div>
                         <div style={{display: "flex", marginTop: 10, justifyContent: "start", position: "relative",
