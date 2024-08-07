@@ -167,11 +167,20 @@ export default function Projects({setValue, setShowCircularProgress}: AppProps) 
 
     return (<div id="projects">
         <div id="header-wrapper-projects">
-            {window.innerWidth >= 768 && <motion.div id="header-projects">
-                {/*<ProjectsHeader></ProjectsHeader>*/}
-                <ParallaxText baseVelocity={2}>PERSONAL PROJECTS •</ParallaxText>
-            </motion.div>}
-            {window.innerWidth < 768 && <div id="header-projects">PERSONAL PROJECTS.</div>}
+            <div id="header-desktop">
+                <motion.div id="header-projects">
+                    {/*<ProjectsHeader></ProjectsHeader>*/}
+                    <ParallaxText baseVelocity={2}>PERSONAL PROJECTS •</ParallaxText>
+                </motion.div>
+            </div>
+            <div id="header-mobile">
+                <div id="header-projects">PERSONAL PROJECTS.</div>
+            </div>
+            {/*{window.innerWidth >= 768 && <motion.div id="header-projects">*/}
+            {/*    /!*<ProjectsHeader></ProjectsHeader>*!/*/}
+            {/*    <ParallaxText baseVelocity={2}>PERSONAL PROJECTS •</ParallaxText>*/}
+            {/*</motion.div>}*/}
+            {/*{window.innerWidth < 768 && <div id="header-projects">PERSONAL PROJECTS.</div>}*/}
             {/*<div style={{height: "20px", width: "120%", right: "10px", top: "10px", position: "relative", backgroundColor: "white"}}/>*/}
             {/*<div id="divider-projects"/>*/}
         </div>

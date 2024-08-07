@@ -1,7 +1,7 @@
 import './Experience.css'
 import TimelineItemInterface from "../../interfaces/TimelineItemInterface";
 import Timeline from "./components/Timeline";
-import {Card, CardContent, Chip, Dialog, DialogContent, DialogTitle, IconButton, Paper} from "@mui/material";
+import {Card, CardContent, Chip, Dialog, DialogContent, DialogTitle, IconButton, Paper, Tooltip} from "@mui/material";
 import {motion, useMotionValueEvent, useScroll, useTransform} from "framer-motion";
 import {useEffect, useRef, useState} from "react";
 import {ArrowRightAlt, Email, GitHub, LinkedIn, Mail} from "@mui/icons-material";
@@ -13,7 +13,7 @@ export default function Experience() {
             company: "Knotty Knickers",
             description: "Knotty Knickers is a Canadian-based lingerie company. My job at Knotty Knickers initially was to work on our Shopify websites to make design changes and UI / UX implementations. Later on, I worked with our marketing and warehouse teams to single-handedly build various full-stack software, such as an internal inventory system, a comprehensive sales dashboard, and a warehouse management system.",
             dateRange: "February 2023 - July 2024",
-            skills: ["React", "Redux", "MongoDB", "Typescript", "Node.js", "Firebase", "Docker", "Google Cloud Platform", "Shopify", "Jest"]
+            skills: ["React", "Redux", "MongoDB", "Typescript", "Node.js", "Firebase", "Docker", "Google Cloud Platform", "Shopify", "Jest", "Webhooks"]
         },
         {
             title: "Full Stack Developer",
@@ -34,7 +34,7 @@ export default function Experience() {
             company: "Freelance Work",
             description: "Currently working on frontend design changes for yogajeans.ca and climbonsight.ca.",
             dateRange: "July 2024 - Present",
-            skills: ["React", "Redux", "MongoDB", "Typescript", "NodeJS"]
+            skills: ["Vue.js", "HTML", "CSS", "Javascript", "Shopify"]
         }
     ]
 
@@ -91,26 +91,30 @@ export default function Experience() {
     return (
         <div className={"experience"} ref={experienceRef}>
         <div id="header-wrapper-experience">
-            <motion.div id="header-experience-sideways" style={{opacity: experienceSidewaysOpacity}}>RELEVANT EXPERIENCE.</motion.div>
+            <motion.div id="header-experience-sideways" initial={{opacity: 0}} style={{opacity: experienceSidewaysOpacity}}>RELEVANT EXPERIENCE.</motion.div>
             <p id="header-experience">RELEVANT EXPERIENCE.</p>
             <div id="divider-experience"/>
         </div>
         <div style={{display: "flex"}} ref={timelineRef}>
             <Timeline timelineItems={timelineItems}/>
             <div className={"experience-skills"}>
-            <motion.div ref={skillsRef} style={{opacity}}>
+            <motion.div ref={skillsRef} style={{opacity}} initial={{opacity: 0}}>
                 <Card elevation={5}>
                     <CardContent sx={{padding: 5}}>
                         <h3 style={{marginTop: 0}}>Got any questions about my experience?</h3>
                         <div style={{display: "flex", alignItems: "center"}}>If so, feel free to reach out at any of the links below.</div>
                         <div style={{display: "flex", marginTop: 10, justifyContent: "start", position: "relative",
                             right: 3}}>
+                            <Tooltip title={"My Linkedin"}>
                             <IconButton onClick={() => window.open("https://linkedin.com/in/haydenhoffmanca")} sx={iconButtonStying} color={"info"}>
                                 <LinkedIn sx={iconSize}/>
                             </IconButton>
+                            </Tooltip>
+                            <Tooltip title={"Email me"}>
                             <IconButton onClick={() => window.open("mailto:haydenhoffman@gmail.com")} sx={iconButtonStying} color={"info"}>
                                 <Email sx={iconSize}/>
                             </IconButton>
+                            </Tooltip>
                         </div>
                     </CardContent>
                 </Card>

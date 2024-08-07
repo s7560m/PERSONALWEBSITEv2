@@ -1,6 +1,16 @@
-import {AppBar, Button, Dialog, DialogContent, DialogTitle, IconButton, Paper, Toolbar} from "@mui/material";
+import {
+    AppBar,
+    Button,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    IconButton,
+    Paper,
+    Toolbar
+} from "@mui/material";
 import './Navigation.css'
-import {Email, GitHub, LinkedIn, Menu} from "@mui/icons-material";
+import {Close, Email, GitHub, LinkedIn, Menu} from "@mui/icons-material";
 import {memo, useEffect, useRef, useState} from "react";
 import App from "../App";
 import {motion, useScroll, useTransform} from "framer-motion";
@@ -37,14 +47,17 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
             </div>
             <Dialog open={showDialog} onClose={() => setShowDialog(false)}>
                 <DialogTitle sx={{fontFamily: "Plus Jakarta Sans, Sans Serif"}}>
-                    Menu.
+                    <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                        <div>MENU.</div>
+                        <IconButton onClick={() => setShowDialog(false)} sx={{paddingRight: 0, fontSize: "28px"}}><Close></Close></IconButton>
+                    </div>
                 </DialogTitle>
                 <DialogContent>
-                    <Button color={"secondary"} variant="contained" onClick={() => scroll("home")} sx={buttonStyling}>Home</Button>
-                    <Button color={"secondary"} variant="contained" onClick={() => scroll("experience")} sx={buttonStyling}>Experience</Button>
-                    <Button color={"secondary"} variant="contained" onClick={() => scroll("projects")} sx={buttonStyling}>Projects</Button>
-                    <Button color={"secondary"} variant="contained" onClick={() => scroll("about")} sx={buttonStyling}>About</Button>
-                    <Button color={"secondary"} variant="contained" onClick={() => window.open(resumeLink)} sx={buttonStyling}>Resume</Button>
+                    <Button color={"secondary"} variant="outlined" onClick={() => scroll("home")} sx={buttonStyling}>Home</Button>
+                    <Button color={"secondary"} variant="outlined" onClick={() => scroll("experience")} sx={buttonStyling}>Experience</Button>
+                    <Button color={"secondary"} variant="outlined" onClick={() => scroll("projects")} sx={buttonStyling}>Projects</Button>
+                    <Button color={"secondary"} variant="outlined" onClick={() => scroll("about")} sx={buttonStyling}>About</Button>
+                    <Button color={"secondary"} variant="outlined" onClick={() => window.open(resumeLink)} sx={buttonStyling}>Resume</Button>
                 </DialogContent>
             </Dialog>
         </div>

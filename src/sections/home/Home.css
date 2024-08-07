@@ -67,9 +67,9 @@
     top: 20vh;
     left: 60vw;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     #header {
-        font-size: 34px;
+        font-size: 38px;
         /*text-align: justify;*/
     }
     #header-wrapper {
@@ -87,8 +87,8 @@
     #sub-header {
         margin-left: auto;
         margin-right: auto;
-        font-size: 18px;
-        width: 85%;
+        font-size: 20px;
+        width: 55%;
     }
     #divider {
         height: 20px;
@@ -110,6 +110,19 @@
         height: 100vh;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #header {
+        font-size: 34px;
+        /*text-align: justify;*/
+    }
+    #sub-header {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        width: 85%;
     }
 }
 

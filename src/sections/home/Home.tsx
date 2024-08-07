@@ -3,7 +3,7 @@ import * as Granim from "granim"
 import './Home.css'
 import {CSSProperties, StyleHTMLAttributes, useCallback, useEffect, useLayoutEffect, useRef, useState} from "react";
 import Landing from "./components/Landing";
-import {IconButton} from "@mui/material";
+import {IconButton, Tooltip} from "@mui/material";
 import {Email, GitHub, KeyboardArrowDownRounded, KeyboardDoubleArrowDown, LinkedIn} from "@mui/icons-material";
 import {motion, useMotionValue, useMotionValueEvent, useScroll, useTransform} from "framer-motion";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
@@ -57,15 +57,21 @@ export default function Home() {
             {/*<div id="divider"/>*/}
             <p id="sub-header">I am a full-stack software developer based in Toronto, Canada. I design user experiences. I build APIs. I transform companies.</p>
             <div id="icons-wrapper">
-                <IconButton onClick={() => window.open("https://linkedin.com/in/haydenhoffmanca")} sx={iconButtonStying} color={"info"}>
-                    <LinkedIn sx={iconSize}/>
-                </IconButton>
+                <Tooltip title={"My Linkedin"}>
+                    <IconButton onClick={() => window.open("https://linkedin.com/in/haydenhoffmanca")} sx={iconButtonStying} color={"info"}>
+                        <LinkedIn sx={iconSize}/>
+                    </IconButton>
+                </Tooltip>
+                <Tooltip title={"My Github"}>
                 <IconButton onClick={() => window.open("https://github.com/s7560m")} sx={iconButtonStying} color={"info"}>
                     <GitHub sx={iconSize}/>
                 </IconButton>
+                </Tooltip>
+                <Tooltip title={"Email me"}>
                 <IconButton onClick={() => window.open("mailto:haydenhoffman@gmail.com")} sx={iconButtonStying} color={"info"}>
                     <Email sx={iconSize}/>
                 </IconButton>
+                </Tooltip>
             </div>
         </motion.div>
         <motion.div id="lottie" style={{opacity, scale}}>

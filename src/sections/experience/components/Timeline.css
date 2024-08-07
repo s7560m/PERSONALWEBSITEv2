@@ -4,7 +4,7 @@
     left: 150px;
 }
 
-@media screen and (max-width: 973px) {
+@media screen and (max-width: 1024px) {
     .timeline {
         left: 0;
         margin: auto;

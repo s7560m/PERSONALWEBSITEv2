@@ -29,7 +29,7 @@ export default function TimelineItem({timelineItem}: AppProps) {
                 </div>
             </DialogContent>
             <DialogActions>
-                <Button onClick={() => setTechStackDialog(false)}>Close</Button>
+                <Button color={"secondary"} variant={"outlined"} onClick={() => setTechStackDialog(false)}>Close</Button>
             </DialogActions>
         </Dialog>
         <Card elevation={10} className="timeline-item">
@@ -43,7 +43,7 @@ export default function TimelineItem({timelineItem}: AppProps) {
             </div>
             <div className={"timeline-options"}>
                 <div style={{display: "flex", gap: 10}}>
-                    <Button onClick={() => setTechStackDialog(true)} sx={{fontSize: (window.innerWidth < 768) ? 10 : "initial" }} color={"secondary"} variant="outlined">TECH STACK</Button>
+                    <Button onClick={() => setTechStackDialog(true)} sx={{fontSize: (window.innerWidth < 768) ? 10 : "initial" }} color={"secondary"} variant="outlined">Tech Stack</Button>
                 </div>
                 <div style={{fontWeight: "bold"}}>{timelineItem.dateRange}</div>
 

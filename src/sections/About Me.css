@@ -28,7 +28,7 @@
 #header-wrapper-aboutme {
     position: relative;
     /*top: 20vh;*/
-    top: 30px;
+    top: 60px;
     left: 150px;
     width: 85%;
     /*margin-bottom: 40px;*/
@@ -43,6 +43,10 @@
     /*margin-left: auto;*/
     /*margin-right: auto;*/
     /*height: 80vh;*/
+
+}
+
+.mac-dialog {
 
 }
 
