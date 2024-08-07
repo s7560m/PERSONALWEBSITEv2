@@ -49,7 +49,7 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
                 <DialogTitle sx={{fontFamily: "Plus Jakarta Sans, Sans Serif"}}>
                     <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                         <div>MENU.</div>
-                        <IconButton onClick={() => setShowDialog(false)} sx={{paddingRight: 0, fontSize: "28px"}}><Close></Close></IconButton>
+                        <IconButton onClick={() => setShowDialog(false)} sx={{position: "relative", left: 8}}><Close></Close></IconButton>
                     </div>
                 </DialogTitle>
                 <DialogContent>

@@ -1,7 +1,19 @@
 import TimelineItemInterface from "../../../interfaces/TimelineItemInterface";
 import './TimelineItem.css'
-import {Button, Card, CardActions, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Paper} from "@mui/material";
+import {
+    Button,
+    Card,
+    CardActions,
+    Chip,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    IconButton,
+    Paper
+} from "@mui/material";
 import {useRef, useState} from "react";
+import {Close} from "@mui/icons-material";
 interface AppProps {
     timelineItem: TimelineItemInterface,
 }
@@ -22,15 +34,20 @@ export default function TimelineItem({timelineItem}: AppProps) {
     const [techStackDialog, setTechStackDialog] = useState<boolean>(false);
     return <>
         <Dialog open={techStackDialog} onClose={() => setTechStackDialog(false)}>
-            <DialogTitle>Tech Stack Used</DialogTitle>
+            <DialogTitle sx={{fontFamily: "Plus Jakarta Sans, Sans Serif"}}>
+                <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                <div>TECH STACK.</div>
+                <IconButton onClick={() => setTechStackDialog(false)} sx={{position: "relative", left: 8}}><Close></Close></IconButton>
+            </div>
+            </DialogTitle>
             <DialogContent>
-                <div style={{display: "flex", width: 400, flexWrap: "wrap"}}>
+                <div style={{display: "flex", maxWidth: 400, flexWrap: "wrap"}}>
                 {timelineItem.skills.map(skill => <div style={{margin: 2}}><Chip label={skill} /></div>)}
                 </div>
             </DialogContent>
-            <DialogActions>
-                <Button color={"secondary"} variant={"outlined"} onClick={() => setTechStackDialog(false)}>Close</Button>
-            </DialogActions>
+            {/*<DialogActions>*/}
+            {/*    <Button color={"secondary"} variant={"outlined"} onClick={() => setTechStackDialog(false)}>Close</Button>*/}
+            {/*</DialogActions>*/}
         </Dialog>
         <Card elevation={10} className="timeline-item">
         <div className="timeline-item-wrapper">

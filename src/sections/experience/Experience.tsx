@@ -11,7 +11,7 @@ export default function Experience() {
         {
             title: "Full Stack Developer",
             company: "Knotty Knickers",
-            description: "Knotty Knickers is a Canadian-based lingerie company. My job at Knotty Knickers initially was to work on our Shopify websites to make design changes and UI / UX implementations. Later on, I worked with our marketing and warehouse teams to single-handedly build various full-stack software, such as an internal inventory system, a comprehensive sales dashboard, and a warehouse management system.",
+            description: "Knotty Knickers is a Canadian-based lingerie company. My job at Knotty Knickers initially was to work on their Shopify websites to make design changes and UI / UX implementations. Later on, I worked with their marketing and warehouse teams to single-handedly build various full-stack software, such as an internal inventory system, a comprehensive sales dashboard, and a warehouse management system.",
             dateRange: "February 2023 - July 2024",
             skills: ["React", "Redux", "MongoDB", "Typescript", "Node.js", "Firebase", "Docker", "Google Cloud Platform", "Shopify", "Jest", "Webhooks"]
         },
@@ -44,6 +44,7 @@ export default function Experience() {
     const timelineRef = useRef<HTMLDivElement>(null);
     const opacity = useTransform(scrollY, [window.innerHeight - 100, window.innerHeight + 50, window.innerHeight + timelineHeight - 300, window.innerHeight + timelineHeight - 200], [0, 1, 1, 0])
     const experienceSidewaysOpacity = useTransform(scrollY, [window.innerHeight + 100, window.innerHeight + 500, window.innerHeight + timelineHeight - 300, window.innerHeight + timelineHeight - 200], [0, 1, 1, 0])
+    const display = useTransform(scrollY, [window.innerHeight - 200, window.innerHeight - 100, window.innerHeight + timelineHeight - 200, window.innerHeight + timelineHeight - 100], ["none", "block", "block", "none"])
     const skillsRef = useRef<HTMLDivElement>(null);
     const experienceRef = useRef<HTMLDivElement>(null);
     const [listOfCoords, setListOfCoords] = useState<{index: number, coordinates: DOMRect}[]>([])
@@ -98,7 +99,7 @@ export default function Experience() {
         <div style={{display: "flex"}} ref={timelineRef}>
             <Timeline timelineItems={timelineItems}/>
             <div className={"experience-skills"}>
-            <motion.div ref={skillsRef} style={{opacity}} initial={{opacity: 0}}>
+            <motion.div ref={skillsRef} style={{opacity, display}} initial={{opacity: 0}}>
                 <Card elevation={5}>
                     <CardContent sx={{padding: 5}}>
                         <h3 style={{marginTop: 0}}>Got any questions about my experience?</h3>
