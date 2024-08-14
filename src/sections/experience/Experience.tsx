@@ -11,23 +11,23 @@ export default function Experience() {
         {
             title: "Full Stack Developer",
             company: "Knotty Knickers",
-            description: "Knotty Knickers is a Canadian-based lingerie company. My job at Knotty Knickers initially was to work on their Shopify websites to make design changes and UI / UX implementations. Later on, I worked with their marketing and warehouse teams to single-handedly build various full-stack software, such as an internal inventory system, a comprehensive sales dashboard, and a warehouse management system.",
+            description: "Knotty Knickers is a Canadian-based lingerie company. My job at Knotty Knickers initially was to work on their Shopify websites to make design changes and UI / UX implementations. Later on, I worked with their marketing and warehouse teams to single-handedly build various full-stack software, such as an internal inventory system, a comprehensive sales dashboard, and order-packing software.",
             dateRange: "February 2023 - July 2024",
             skills: ["React", "Redux", "MongoDB", "Typescript", "Node.js", "Firebase", "Docker", "Google Cloud Platform", "Shopify", "Jest", "Webhooks"]
         },
         {
             title: "Full Stack Developer",
             company: "Connect to Canada",
-            description: "Connect to Canada is a small Canadian-based education company with a goal of teaching students STEM-related courses. When I was at Connect to Canada, my job was to assist in the development and improvement of a web-based learning platform. I also built an analytics dashboard for CTC's instuctors to assess student performance.",
+            description: "Connect to Canada is a small Canadian-based education company with a goal of teaching students STEM-related courses. When I was at Connect to Canada, my job was to assist in the development and improvement of a web-based learning platform. I also built an analytics dashboard for CTC's instuctors to assess student performance. I was working part time at CTC while I was in school, then transitioned to full time after graduation.",
             dateRange: "May 2021 - September 2022",
-            skills: ["React", "Redux", "MySQL", "Typescript", "Node.js", "Flask", "Docker", "Google Cloud Platform", "Jest"]
+            skills: ["React", "Redux", "MySQL", "Typescript", "Node.js", "Flask", "Docker", "Google Cloud Platform", "Jest", "Pytest"]
         },
         {
             title: "Software Engineer",
             company: "OddJob Handyman Services",
             description: "OddJob.ca is a professional handyman company that deals with jobs such as installing sinks, repairing doors, and more. My job was to assist in the development of a web-based internal pricing tool that would let OddJob staff create handyman quotes and invoices without having to manually fill them out in getjobber.com.",
             dateRange: "July 2020 - September 2020",
-            skills: ["Vue", "Vuex", "Node.js", "Node.js", "Firebase", "Jest"]
+            skills: ["Vue", "Vuex", "Node.js", "Firebase", "Jest"]
         },
         {
             title: "Web Developer",

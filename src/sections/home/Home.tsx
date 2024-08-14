@@ -53,10 +53,10 @@ export default function Home() {
         {/*<Landing canvasWrapperRef={canvasWrapperRef} />*/}
         {/* @ts-ignore */}
         <motion.div id="header-wrapper" style={{opacity, scale}}>
-            <p id="header">Hi, I'm Hayden.</p>
+            <motion.div id="header">Hi, I'm Hayden.</motion.div>
             {/*<div id="divider"/>*/}
-            <p id="sub-header">I am a full-stack software developer based in Toronto, Canada. I design user experiences. I build APIs. I transform companies.</p>
-            <div id="icons-wrapper">
+            <motion.div id="sub-header">I am a full-stack software developer based in Toronto, Canada. I design user experiences. I build APIs. I transform companies.</motion.div>
+            <motion.div id="icons-wrapper">
                 <Tooltip title={"My Linkedin"}>
                     <IconButton onClick={() => window.open("https://linkedin.com/in/haydenhoffmanca")} sx={iconButtonStying} color={"info"}>
                         <LinkedIn sx={iconSize}/>
@@ -72,7 +72,7 @@ export default function Home() {
                     <Email sx={iconSize}/>
                 </IconButton>
                 </Tooltip>
-            </div>
+            </motion.div>
         </motion.div>
         <motion.div id="lottie" style={{opacity, scale}}>
             <Lottie loop animationData={LottieAnimation}></Lottie>

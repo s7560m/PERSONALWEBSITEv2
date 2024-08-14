@@ -58,7 +58,7 @@ export default function Navigation({navBtnEventListener}: AppProps) {
             <Button onClick={() => scroll("experience")} sx={buttonStyle} color={"info"}>Experience</Button>
             <Button onClick={() => scroll("projects")} sx={buttonStyle} color={"info"}>Projects</Button>
             <Button onClick={() => scroll("about")} sx={buttonStyle} color={"info"}>About Me</Button>
-            <Button onClick={() => window.open("https://docs.google.com/document/d/1ZCslBX21yM77c-eRbdG2G5LkE58mOlnWvWIuSmhbQz4/edit?usp=sharing")} sx={buttonStyle} color={"info"}>Resume</Button>
+            <Button onClick={() => window.open("https://docs.google.com/document/d/1-SQ0mGyEKzCh1-IHYhcb6lSypipgKnZHHGW58N28KU4/edit?usp=sharing")} sx={buttonStyle} color={"info"}>Resume</Button>
             {/*<div id="nav-icon-wrapper" ref={iconWrapperRef} className={getIconClass()}>*/}
             {/*    <IconButton onClick={() => window.open("mailto:haydenhoffman@gmail.com")} color={"info"} sx={iconButtonStyle}>*/}
             {/*        <Email/>*/}

@@ -56,7 +56,7 @@ export default function TimelineItem({timelineItem}: AppProps) {
                 <h2 id="company-header" className="header">{timelineItem.title}</h2>
             </div>
             <div className="timeline-item-body">
-                <h3 id="description-text" className="header header-2">{timelineItem.description}</h3>
+                <h3 id="description-text" style={{fontWeight: "normal"}} className="header header-2">{timelineItem.description}</h3>
             </div>
             <div className={"timeline-options"}>
                 <div style={{display: "flex", gap: 10}}>

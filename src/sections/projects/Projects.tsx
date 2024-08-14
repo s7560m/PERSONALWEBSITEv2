@@ -160,6 +160,10 @@ export default function Projects({setValue, setShowCircularProgress}: AppProps) 
                     <div style={parallaxStyle}>{children} </div>
                     <div style={parallaxStyle}>{children} </div>
                     <div style={parallaxStyle}>{children} </div>
+                    <div style={parallaxStyle}>{children} </div>
+                    <div style={parallaxStyle}>{children} </div>
+                    <div style={parallaxStyle}>{children} </div>
+                    <div style={parallaxStyle}>{children} </div>
                 </motion.div>
             </div>
         );

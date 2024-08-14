@@ -36,7 +36,7 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
     const [showDialog, setShowDialog] = useState<boolean>(false);
 
     const buttonStyling = {height: "80px", fontSize: "20px", width: "100%", marginBottom: "20px", fontFamily: "Plus Jakarta Sans, Sans Serif"};
-    const resumeLink = "https://drive.google.com/file/d/1ljXq52D8t4RnaYdnXClneUesSXcBybm8/view?usp=sharing"
+    const resumeLink = "https://docs.google.com/document/d/1-SQ0mGyEKzCh1-IHYhcb6lSypipgKnZHHGW58N28KU4/edit?usp=sharing"
     return (
         <div style={{position: "fixed", top: 0, zIndex: 5, width: "100%"}}>
             <motion.div style={{zIndex: 0, height: 44, position: "fixed", top: 0, background: "white", width: "100%", opacity, boxShadow: "0 0 17px 0px rgba(0, 0, 0, 0.2)"}}/>
