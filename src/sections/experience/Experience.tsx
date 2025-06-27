@@ -9,6 +9,13 @@ export default function Experience() {
 
     const timelineItems: Array<TimelineItemInterface> = [
         {
+            title: "Software Developer",
+            company: "Zensurance",
+            description: "Zensurance is a Canadian-based insurance brokerage for small businesses. My role as a software developer strongly follows the software development lifecycle and agile methodology. I do a wide range of things at Zensurance, such as: building various features for stakeholders, provisioning AWS infrastructure using terraform, writing / improving our unit and integration testing, conducting insurance-related document generation testing on salesforce, code reviews, software monitoring, and much more.",
+            dateRange: "Sept 2024 - Present",
+            skills: ["Nestjs", "TypeORM", "PostgreSQL", "MongoDB", "Typescript", "Docker", "AWS", "Kubernetes (AWS EKS)", "Terraform", "Salesforce", "Kafka"]
+        },
+        {
             title: "Full Stack Developer",
             company: "Knotty Knickers",
             description: "Knotty Knickers is a Canadian-based lingerie company. My job at Knotty Knickers initially was to work on their Shopify websites to make design changes and UI / UX implementations. Later on, I worked with their marketing and warehouse teams to single-handedly build various full-stack software, such as an internal inventory system, a comprehensive sales dashboard, and order-packing software.",
@@ -56,25 +63,6 @@ export default function Experience() {
         }
 
     }, [])
-
-    // useMotionValueEvent(scrollY, 'change', (latestValue) => {
-    //     if (skillsRef.current === null || experienceRef.current === null) return;
-    //
-    //     for (let i = 0; i < listOfCoords.length; i++) {
-    //         // coords y - experienceRef + window.innerHeight - latestValue >= skillsRef
-    //         //&& listOfCoords[i].coordinates.y + experienceRef.current.getBoundingClientRect().y - latestValue <= skillsRef.current.getBoundingClientRect().y + listOfCoords[i].coordinates.height
-    //         if (listOfCoords[i].coordinates.y + experienceRef.current.getBoundingClientRect().y + window.innerHeight - latestValue >= skillsRef.current.getBoundingClientRect().y) {
-    //             console.table([{
-    //                 listOfCoords,
-    //                 experienceRef: experienceRef.current.getBoundingClientRect().y,
-    //                 latestValue,
-    //                 skillsRef: skillsRef.current.getBoundingClientRect().y,
-    //             }])
-    //             setSkillIndex(i);
-    //             break;
-    //         }
-    //     }
-    // })
 
     const iconSize = {
         fontSize: "32px",
