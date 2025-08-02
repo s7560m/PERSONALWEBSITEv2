@@ -58,7 +58,7 @@ export default function Home() {
             <Lottie loop animationData={LottieAnimation}/>
         </motion.div>
         {/*<dotlottie-player src="https://lottie.host/embed/add80e3d-9c5b-4af6-8706-2357c7e76b25/F5hb2yqqi6.json"/>*/}
-        <motion.div style={{opacity, position: "fixed", height: 100, bottom: 0, display: "flex", alignItems: "center", justifyContent: "center", width: "100%"}}>
+        <motion.div className={"keyboard-style"} style={{opacity, position: "fixed", height: 100, bottom: 0, display: "flex", alignItems: "center", justifyContent: "center", width: "100%"}}>
             <KeyboardDoubleArrowDown sx={{fontSize: 40}}/>
         </motion.div>
     </div>)
