@@ -18,7 +18,7 @@ interface AppProps {
 export default function TimelineItem({timelineItem}: AppProps) {
 
     const [techStackDialog, setTechStackDialog] = useState<boolean>(false);
-    const {darkMode, color} = useDarkMode()
+    const {darkMode, darkModeBtnStyles} = useDarkMode()
     return <>
         <Dialog open={techStackDialog} onClose={() => setTechStackDialog(false)}>
             <DialogTitle sx={{fontFamily: "Plus Jakarta Sans, Sans Serif"}}>
@@ -49,15 +49,7 @@ export default function TimelineItem({timelineItem}: AppProps) {
                 <div style={{display: "flex", gap: 10}}>
                     <Button
                         onClick={() => setTechStackDialog(true)}
-                        sx={{
-                            fontSize: window.innerWidth < 768 ? 10 : "initial",
-                            color: color,
-                            borderColor: color,
-                            "&:hover": {
-                                borderColor: color,
-                                backgroundColor: "rgba(255, 255, 255, 0.08)", // subtle hover for dark mode
-                            },
-                        }}
+                        sx={{...darkModeBtnStyles, fontSize: window.innerWidth < 768 ? 10 : "initial",}}
                         variant="outlined"
                     >
                         Tech Stack

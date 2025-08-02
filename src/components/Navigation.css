@@ -1,6 +1,5 @@
 .app-bar {
     position: fixed;
-    background: white;
     width: calc(100vw - 64px);
     z-index: 10;
     top: 0px;
