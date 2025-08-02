@@ -6,7 +6,7 @@ import {
     IconButton,
 } from "@mui/material";
 import './Navigation.css'
-import {Close, Menu} from "@mui/icons-material";
+import {Close, MenuSharp} from "@mui/icons-material";
 import {memo, useState} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 
@@ -16,7 +16,7 @@ interface AppProps {
 
 function NavigationMobile({navBtnEventListener}: AppProps) {
 
-    const iconButtonStyle = {fontSize: "40px"}
+    const iconButtonStyle = {fontSize: "40px", color: "black"}
 
     function scroll(section: string) {
         // dispatch callback to allow app to scroll to component
@@ -34,10 +34,10 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
     const resumeLink = "https://docs.google.com/document/d/1-SQ0mGyEKzCh1-IHYhcb6lSypipgKnZHHGW58N28KU4/edit?usp=sharing"
     return (
         <div style={{position: "fixed", top: 0, zIndex: 5, width: "100%"}}>
-            <motion.div style={{zIndex: 0, height: 44, position: "fixed", top: 0, background: "white", width: "100%", opacity, boxShadow: "0 0 17px 0px rgba(0, 0, 0, 0.2)"}}/>
+            <motion.div style={{zIndex: 0, height: 50, position: "fixed", top: 0, background: "white", width: "100%", opacity, boxShadow: "0 0 17px 0px rgba(0, 0, 0, 0.2)"}}/>
             <div id="hamburger-wrapper">
                 <IconButton onClick={() => setShowDialog(true)} sx={iconButtonStyle}>
-                    <Menu style={{fontSize: "28px"}}/>
+                    <MenuSharp style={{fontSize: "30px"}}/>
                 </IconButton>
             </div>
             <Dialog open={showDialog} onClose={() => setShowDialog(false)}>
