@@ -11,12 +11,14 @@ import {
 } from "@mui/material";
 import {useState} from "react";
 import {Close} from "@mui/icons-material";
+import {useDarkMode} from "../../../hooks/useDarkMode";
 interface AppProps {
     timelineItem: TimelineItemInterface,
 }
 export default function TimelineItem({timelineItem}: AppProps) {
 
     const [techStackDialog, setTechStackDialog] = useState<boolean>(false);
+    const {darkMode, darkModeBtnStyles} = useDarkMode()
     return <>
         <Dialog open={techStackDialog} onClose={() => setTechStackDialog(false)}>
             <DialogTitle sx={{fontFamily: "Plus Jakarta Sans, Sans Serif"}}>
@@ -40,12 +42,18 @@ export default function TimelineItem({timelineItem}: AppProps) {
                 <h1 id="title-header" className="header">{timelineItem.company}</h1>
                 <h2 id="company-header" className="header">{timelineItem.title}</h2>
             </div>
-            <div className="timeline-item-body">
+            <div className="timeline-item-body" style={{background: darkMode ? "unset" : "#f1f1f1"}}>
                 <h3 id="description-text" style={{fontWeight: "normal"}} className="header header-2">{timelineItem.description}</h3>
             </div>
             <div className={"timeline-options"}>
                 <div style={{display: "flex", gap: 10}}>
-                    <Button onClick={() => setTechStackDialog(true)} sx={{fontSize: (window.innerWidth < 768) ? 10 : "initial" }} color={"secondary"} variant="outlined">Tech Stack</Button>
+                    <Button
+                        onClick={() => setTechStackDialog(true)}
+                        sx={{...darkModeBtnStyles, fontSize: window.innerWidth < 768 ? 10 : "initial",}}
+                        variant="outlined"
+                    >
+                        Tech Stack
+                    </Button>
                 </div>
                 <div style={{fontWeight: "bold"}}>{timelineItem.dateRange}</div>
 

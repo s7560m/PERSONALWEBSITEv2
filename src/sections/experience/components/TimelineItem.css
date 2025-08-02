@@ -33,22 +33,18 @@
     padding-top: 10px;
     /*padding-bottom: 5px;*/
     /*height: inherit;*/
-    background-color: white;
 }
 
 .header {
     padding-left: 30px;
-    color: black;
     font-family: "Plus Jakarta Sans", sans-serif
 }
 
 .header-2 {
-    color: black;
     padding: 30px 30px 30px;
 }
 
 .date-range {
-    color: white;
     position: relative;
     /*left: 100px;*/
 }

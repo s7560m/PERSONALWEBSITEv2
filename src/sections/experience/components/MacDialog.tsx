@@ -1,5 +1,6 @@
 import {Card, CardContent} from "@mui/material";
 import {CSSProperties} from "react";
+import {useDarkMode} from "../../../hooks/useDarkMode";
 
 export default function MacDialog({title, description, image, leftDesktop, topDesktop, zIndex}: {title: string, description?: string, image?: string, leftDesktop: number, topDesktop: number, leftMobile: number, topMobile: number, zIndex: number}) {
     function getContainerStyle(): CSSProperties {
@@ -10,9 +11,11 @@ export default function MacDialog({title, description, image, leftDesktop, topDe
         }
     }
 
+    const {darkMode} = useDarkMode()
+
     return <div style={getContainerStyle()}>
         <Card className="about-me-card" elevation={20} color="primary">
-        <div style={{backgroundColor: "lightgrey", height: "32px", display: "flex", flexDirection: "row"}}>
+        <div style={{backgroundColor: darkMode ? "unset" : "lightgrey", height: "32px", display: "flex", flexDirection: "row"}}>
             {/*<div className="about-me-header">About me.</div>*/}
             <div style={{display: "flex", flexDirection: "row"}}>
                 <svg height="32px" width="24px" xmlns="http://www.w3.org/2000/svg">

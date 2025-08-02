@@ -49,7 +49,6 @@
     /*margin-top: 150px;*/
     font-weight: bold;
     font-size: 2rem;
-    color: black;
     width: max-content;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
@@ -74,7 +73,6 @@
     /*border: 2px dashed black;*/
     /*margin-top: 10px;*/
     /*margin-bottom: 10px;*/
-    background-color: black;
 }
 
 #projects-wrapper {

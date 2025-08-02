@@ -42,30 +42,6 @@ export default function Projects() {
         },
     ]
 
-    // const div = useRef<HTMLDivElement>(null);
-    // const isVisible = useOnScreen(div);
-    // const [currentProjectNum, setCurrentProjectNum] = useState<number>(1);
-    //
-    // useEffect(() => {
-    //     let ratio = Math.floor(currentProjectNum * 100 / projectArray.length);
-    //
-    //     if (setValue !== undefined) {
-    //         setValue(ratio);
-    //     }
-    // }, [currentProjectNum])
-    //
-    // useEffect(() => {
-    //     if (setShowCircularProgress !== undefined) {
-    //         setShowCircularProgress(isVisible);
-    //     }
-    // }, [isVisible])
-
-    // function getProjectsWrapperClass() {
-    //     let init = "projects-init"
-    //     if (window.innerWidth <= 768) return "projects-mobile";
-    //     return "projects-hide " + init;
-    // }
-
     interface ParallaxProps {
         children: string;
         baseVelocity: number;
@@ -149,13 +125,6 @@ export default function Projects() {
             <div id="header-mobile">
                 <div id="header-projects">PERSONAL PROJECTS.</div>
             </div>
-            {/*{window.innerWidth >= 768 && <motion.div id="header-projects">*/}
-            {/*    /!*<ProjectsHeader></ProjectsHeader>*!/*/}
-            {/*    <ParallaxText baseVelocity={2}>PERSONAL PROJECTS •</ParallaxText>*/}
-            {/*</motion.div>}*/}
-            {/*{window.innerWidth < 768 && <div id="header-projects">PERSONAL PROJECTS.</div>}*/}
-            {/*<div style={{height: "20px", width: "120%", right: "10px", top: "10px", position: "relative", backgroundColor: "white"}}/>*/}
-            {/*<div id="divider-projects"/>*/}
         </div>
         <ProjectList projectArray={projectArray}/>
     </div>)
