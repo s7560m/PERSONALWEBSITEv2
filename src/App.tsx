@@ -92,7 +92,7 @@ function App() {
                     <Experience/>
                 </div>
                 <div ref={projectRef}>
-                    <Projects setValue={setValue} setShowCircularProgress={setShowCircularProgress}/>
+                    <Projects setShowCircularProgress={setShowCircularProgress}/>
                 </div>
                 <div ref={aboutRef}>
                     <AboutMe setAboutMeVisible={setAboutMeVisible}/>
