@@ -65,9 +65,6 @@ export default function Projects() {
     //     if (window.innerWidth <= 768) return "projects-mobile";
     //     return "projects-hide " + init;
     // }
-    const {scrollY} = useScroll();
-
-    const right = useTransform(scrollY, [window.innerHeight * 2, window.innerHeight * 3], [0, 200])
 
     interface ParallaxProps {
         children: string;

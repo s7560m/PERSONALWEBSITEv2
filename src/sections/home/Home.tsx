@@ -1,5 +1,4 @@
 // @ts-ignore
-import * as Granim from "granim"
 import './Home.css'
 import {useRef} from "react";
 import {IconButton, Tooltip} from "@mui/material";
@@ -11,18 +10,6 @@ export default function Home() {
 
     // const [scrollPos, setScrollPos] = useState<number>(0);
     const {scrollY} = useScroll();
-
-    // useEffect(() => {
-    //     // calculate ratio
-    //     if (window.innerWidth > 450) {
-    //         let ratio = scrollPos / window.innerHeight;
-    //         let newBrightness = 100 * ratio;
-    //         let newBlur = 10 * ratio;
-    //         setCanvasWrapperStyle({
-    //             filter: `brightness(${100 - newBrightness}%) blur(${newBlur}px)`
-    //         })
-    //     }
-    // }, [scrollPos])
 
     const iconSize = {
         fontSize: "32px"

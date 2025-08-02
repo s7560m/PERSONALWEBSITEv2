@@ -1,4 +1,4 @@
-import {memo, useRef, useState} from "react";
+import {memo, useRef} from "react";
 import ProjectItem from "./ProjectItem";
 import Project from "../../../interfaces/ProjectInterface";
 // @ts-ignore

@@ -1,7 +1,6 @@
-import {AppBar, Button, IconButton, Toolbar} from "@mui/material";
+import {Button} from "@mui/material";
 import './Navigation.css'
-import {Email, GitHub, LinkedIn} from "@mui/icons-material";
-import {memo, useEffect, useRef, useState} from "react";
+import {useRef} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 
 interface AppProps {
@@ -11,8 +10,6 @@ interface AppProps {
 export default function Navigation({navBtnEventListener}: AppProps) {
 
     const buttonStyle = {fontFamily: "Plus Jakarta Sans", color: "black"}
-    const iconButtonStyle = {float: "right"}
-
     const {scrollY} = useScroll();
     // const handleScroll = () => {
     //     setScrollPosition(window.scrollY);
@@ -31,17 +28,13 @@ export default function Navigation({navBtnEventListener}: AppProps) {
     //     }
     //     return "app-bar"
     // }
-
-    const iconWrapperRef = useRef<HTMLDivElement>(null);
-
+    useRef<HTMLDivElement>(null);
     function scroll(section: string) {
         // dispatch callback to allow app to scroll to component
         navBtnEventListener(section);
     }
 
     const opacity = useTransform(scrollY, [0, window.innerHeight * 0.5, window.innerHeight], [0, 0, 1])
-
-    const resumeLink = "https://drive.google.com/file/d/1ljXq52D8t4RnaYdnXClneUesSXcBybm8/view?usp=sharing"
     return (
         <div className={"app-bar"}>
             <motion.div style={{
