@@ -33,7 +33,7 @@ function App() {
             bottom: "20px",
             position: "fixed"
         } as CSSProperties;
-    const [value, setValue] = useState<number>(0);
+    const [value] = useState<number>(0);
         const [showCircularProgress, setShowCircularProgress] = useState<boolean>(false);
         const circularProgressRef = useRef<HTMLDivElement>(null);
         const [aboutMeVisible, setAboutMeVisible] = useState<boolean>(false);
@@ -92,10 +92,10 @@ function App() {
                     <Experience/>
                 </div>
                 <div ref={projectRef}>
-                    <Projects setShowCircularProgress={setShowCircularProgress}/>
+                    <Projects/>
                 </div>
                 <div ref={aboutRef}>
-                    <AboutMe setAboutMeVisible={setAboutMeVisible}/>
+                    <AboutMe></AboutMe>
                 </div>
             </div>
               {window.innerWidth > 1030 && <div ref={circularProgressRef} style={circularProgressStyle} className={getCircularProgressClass()}>
