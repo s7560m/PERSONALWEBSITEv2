@@ -1,6 +1,5 @@
-import React, {CSSProperties, memo, useLayoutEffect, useRef, useState} from 'react';
+import React, {CSSProperties, memo, useLayoutEffect, useMemo, useRef, useState} from 'react';
 import './App.css';
-// @ts-ignore
 import Home from "./sections/home/Home";
 import Navigation from "./components/Navigation";
 import {CircularProgress, createTheme, ThemeProvider} from "@mui/material";
@@ -8,24 +7,26 @@ import Experience from "./sections/experience/Experience";
 import Projects from "./sections/projects/Projects";
 import AboutMe from "./sections/About Me";
 import NavigationMobile from "./components/NavigationMobile";
-
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: "#0971f1",
-            light: "#FFFFFF",
-        },
-        info: {
-            main: "#FFFFFF"
-        },
-        secondary: {
-            main: "#000000"
-        }
-    }
-})
-
+import {useThemeStore} from "./zustandStore";
 
 function App() {
+
+    const darkMode = useThemeStore((state) => state.darkMode);
+    const theme = useMemo(() => createTheme({
+        palette: {
+            mode: darkMode ? 'dark' : 'light',
+            primary: {
+                main: "#0971f1",
+                light: "#FFFFFF",
+            },
+            info: {
+                main: "#FFFFFF"
+            },
+            secondary: {
+                main: "#000000"
+            }
+        }
+    }), [darkMode])
 
         const circularProgressStyle = {
             right: "20px",

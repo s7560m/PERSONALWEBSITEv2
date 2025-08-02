@@ -1,17 +1,18 @@
-import {Button} from "@mui/material";
+import {Button, useTheme} from "@mui/material";
 import './Navigation.css'
 import {useRef} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 import DarkModeSwitch from "./DarkModeSwitch";
 import {useThemeStore} from "../zustandStore";
+import {useDarkMode} from "../hooks/useDarkMode";
 
 interface AppProps {
     navBtnEventListener: Function
 }
 
 export default function Navigation({navBtnEventListener}: AppProps) {
-
-    const buttonStyle = {fontFamily: "Plus Jakarta Sans", color: "black"}
+    const { color, background } = useDarkMode()
+    const buttonStyle = {fontFamily: "Plus Jakarta Sans", color}
     const {scrollY} = useScroll();
 
     useRef<HTMLDivElement>(null);
@@ -22,7 +23,7 @@ export default function Navigation({navBtnEventListener}: AppProps) {
 
     const opacity = useTransform(scrollY, [0, window.innerHeight * 0.5, window.innerHeight], [0, 0, 1])
     return (
-        <div className={"app-bar"}>
+        <div style={{background}} className={"app-bar"}>
             <motion.div style={{
                 position: "fixed",
                 top: 0,
