@@ -1,9 +1,8 @@
-import {Button, useTheme} from "@mui/material";
+import {Button} from "@mui/material";
 import './Navigation.css'
 import {useRef} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 import DarkModeSwitch from "./DarkModeSwitch";
-import {useThemeStore} from "../zustandStore";
 import {useDarkMode} from "../hooks/useDarkMode";
 
 interface AppProps {

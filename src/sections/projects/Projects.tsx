@@ -13,7 +13,6 @@ import {
     wrap
 } from 'framer-motion';
 import {useRef} from "react";
-import {useDarkMode} from "../../hooks/useDarkMode";
 export default function Projects() {
 
     const projectArray: Array<Project> = [
