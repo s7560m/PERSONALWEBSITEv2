@@ -1,11 +1,7 @@
 import './Projects.css'
 import Project from "../../interfaces/ProjectInterface";
-import ProjectItem from "./components/ProjectItem";
-import {CSSProperties, useEffect, useRef, useState} from "react";
-import useOnScreen, {isInViewport} from "../../hooks/useOnScreen";
-import CircularProgressWithLabel from "../../components/CircularProgressWithLabel";
-import {CircularProgress} from "@mui/material";
 import ProjectList from "./components/ProjectList";
+
 import {
     motion,
     useAnimationFrame,
@@ -16,12 +12,8 @@ import {
     useVelocity,
     wrap
 } from 'framer-motion';
-
-interface AppProps {
-    setValue?: Function,
-    setShowCircularProgress?: Function
-}
-export default function Projects({setValue, setShowCircularProgress}: AppProps) {
+import {useRef} from "react";
+export default function Projects() {
 
     const projectArray: Array<Project> = [
         {
@@ -73,29 +65,6 @@ export default function Projects({setValue, setShowCircularProgress}: AppProps) 
     //     if (window.innerWidth <= 768) return "projects-mobile";
     //     return "projects-hide " + init;
     // }
-    function ProjectsHeader() {
-        const projectsHeaderArr: string[] = [];
-        for (let i = 0; i < 10; i++) {
-            projectsHeaderArr.push("PROJECTS");
-            projectsHeaderArr.push("•")
-        }
-
-        const textStyle = {
-            margin: "0 20px",
-            fontSize: 40,
-            fontWeight: "bold"
-        }
-
-        return <div style={{display: "flex"}}>{
-            projectsHeaderArr.map(project => <div style={textStyle}>
-                {project}
-            </div>)
-        }</div>
-    }
-
-    const {scrollY} = useScroll();
-
-    const right = useTransform(scrollY, [window.innerHeight * 2, window.innerHeight * 3], [0, 200])
 
     interface ParallaxProps {
         children: string;

@@ -1,18 +1,13 @@
 import {
-    AppBar,
     Button,
     Dialog,
-    DialogActions,
     DialogContent,
     DialogTitle,
     IconButton,
-    Paper,
-    Toolbar
 } from "@mui/material";
 import './Navigation.css'
-import {Close, Email, GitHub, LinkedIn, Menu} from "@mui/icons-material";
-import {memo, useEffect, useRef, useState} from "react";
-import App from "../App";
+import {Close, Menu} from "@mui/icons-material";
+import {memo, useState} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 
 interface AppProps {
@@ -49,7 +44,7 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
                 <DialogTitle sx={{fontFamily: "Plus Jakarta Sans, Sans Serif"}}>
                     <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                         <div>MENU.</div>
-                        <IconButton onClick={() => setShowDialog(false)} sx={{position: "relative", left: 8}}><Close></Close></IconButton>
+                        <IconButton onClick={() => setShowDialog(false)} sx={{position: "relative", left: 8}}><Close/></IconButton>
                     </div>
                 </DialogTitle>
                 <DialogContent>

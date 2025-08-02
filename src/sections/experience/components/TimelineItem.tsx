@@ -3,32 +3,17 @@ import './TimelineItem.css'
 import {
     Button,
     Card,
-    CardActions,
     Chip,
     Dialog,
-    DialogActions,
     DialogContent,
     DialogTitle,
-    IconButton,
-    Paper
+    IconButton
 } from "@mui/material";
-import {useRef, useState} from "react";
+import {useState} from "react";
 import {Close} from "@mui/icons-material";
 interface AppProps {
     timelineItem: TimelineItemInterface,
 }
-
-function TimelineVertical() {
-    const timeline_vertical_style = {
-        height: "50px",
-        width: "10px",
-        margin: "auto",
-        marginTop: "10px",
-        backgroundColor: "white"
-    }
-    return <div style={timeline_vertical_style}></div>
-}
-
 export default function TimelineItem({timelineItem}: AppProps) {
 
     const [techStackDialog, setTechStackDialog] = useState<boolean>(false);
@@ -37,7 +22,7 @@ export default function TimelineItem({timelineItem}: AppProps) {
             <DialogTitle sx={{fontFamily: "Plus Jakarta Sans, Sans Serif"}}>
                 <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <div>TECH STACK.</div>
-                <IconButton onClick={() => setTechStackDialog(false)} sx={{position: "relative", left: 8}}><Close></Close></IconButton>
+                <IconButton onClick={() => setTechStackDialog(false)} sx={{position: "relative", left: 8}}><Close/></IconButton>
             </div>
             </DialogTitle>
             <DialogContent>

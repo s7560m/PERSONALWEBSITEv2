@@ -1,7 +1,6 @@
-import React, {CSSProperties, FC, memo, ReactFragment, useEffect, useLayoutEffect, useRef, useState} from 'react';
+import React, {CSSProperties, memo, useLayoutEffect, useRef, useState} from 'react';
 import './App.css';
 // @ts-ignore
-import * as Granim from 'granim';
 import Home from "./sections/home/Home";
 import Navigation from "./components/Navigation";
 import {CircularProgress, createTheme, ThemeProvider} from "@mui/material";
@@ -33,15 +32,10 @@ function App() {
             bottom: "20px",
             position: "fixed"
         } as CSSProperties;
-
-        interface AppPropsProjects {
-            setValue?: Function
-        }
-
-        const [value, setValue] = useState<number>(0);
-        const [showCircularProgress, setShowCircularProgress] = useState<boolean>(false);
+    const [value] = useState<number>(0);
+        const [showCircularProgress] = useState<boolean>(false);
         const circularProgressRef = useRef<HTMLDivElement>(null);
-        const [aboutMeVisible, setAboutMeVisible] = useState<boolean>(false);
+        const [aboutMeVisible] = useState<boolean>(false);
         function getCircularProgressClass() {
             if (aboutMeVisible) return "hide-circular-progress";
 
@@ -97,10 +91,10 @@ function App() {
                     <Experience/>
                 </div>
                 <div ref={projectRef}>
-                    <Projects setValue={setValue} setShowCircularProgress={setShowCircularProgress}/>
+                    <Projects/>
                 </div>
                 <div ref={aboutRef}>
-                    <AboutMe setAboutMeVisible={setAboutMeVisible}/>
+                    <AboutMe/>
                 </div>
             </div>
               {window.innerWidth > 1030 && <div ref={circularProgressRef} style={circularProgressStyle} className={getCircularProgressClass()}>

@@ -1,10 +1,10 @@
 import './Experience.css'
 import TimelineItemInterface from "../../interfaces/TimelineItemInterface";
 import Timeline from "./components/Timeline";
-import {Card, CardContent, Chip, Dialog, DialogContent, DialogTitle, IconButton, Paper, Tooltip} from "@mui/material";
-import {motion, useMotionValueEvent, useScroll, useTransform} from "framer-motion";
+import {Card, CardContent, IconButton, Tooltip} from "@mui/material";
+import {motion, useScroll, useTransform} from "framer-motion";
 import {useEffect, useRef, useState} from "react";
-import {ArrowRightAlt, Email, GitHub, LinkedIn, Mail} from "@mui/icons-material";
+import {Email, LinkedIn} from "@mui/icons-material";
 export default function Experience() {
 
     const timelineItems: Array<TimelineItemInterface> = [
@@ -54,9 +54,6 @@ export default function Experience() {
     const display = useTransform(scrollY, [window.innerHeight - 200, window.innerHeight - 100, window.innerHeight + timelineHeight - 200, window.innerHeight + timelineHeight - 100], ["none", "block", "block", "none"])
     const skillsRef = useRef<HTMLDivElement>(null);
     const experienceRef = useRef<HTMLDivElement>(null);
-    const [listOfCoords, setListOfCoords] = useState<{index: number, coordinates: DOMRect}[]>([])
-    const [skillIndex, setSkillIndex] = useState<number>(0);
-
     useEffect(() => {
         if (timelineRef.current) {
             setTimelineHeight(timelineRef.current.offsetHeight)

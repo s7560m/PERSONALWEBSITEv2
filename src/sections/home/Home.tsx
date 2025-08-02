@@ -1,35 +1,15 @@
 // @ts-ignore
-import * as Granim from "granim"
 import './Home.css'
-import {CSSProperties, StyleHTMLAttributes, useCallback, useEffect, useLayoutEffect, useRef, useState} from "react";
-import Landing from "./components/Landing";
+import {useRef} from "react";
 import {IconButton, Tooltip} from "@mui/material";
-import {Email, GitHub, KeyboardArrowDownRounded, KeyboardDoubleArrowDown, LinkedIn} from "@mui/icons-material";
-import {motion, useMotionValue, useMotionValueEvent, useScroll, useTransform} from "framer-motion";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import {Email, GitHub, KeyboardDoubleArrowDown, LinkedIn} from "@mui/icons-material";
+import {motion, useScroll, useTransform} from "framer-motion";
 import Lottie from 'lottie-react'
 import LottieAnimation from '../../assets/lottie animation.json'
 export default function Home() {
 
     // const [scrollPos, setScrollPos] = useState<number>(0);
-    const [canvasBrightness, setCanvasBrightness] = useState<number>(100);
-    const [canvasWrapperStyle, setCanvasWrapperStyle] = useState<CSSProperties>(
-        {filter: `brightness(${canvasBrightness}%)`}
-    );
-
     const {scrollY} = useScroll();
-
-    // useEffect(() => {
-    //     // calculate ratio
-    //     if (window.innerWidth > 450) {
-    //         let ratio = scrollPos / window.innerHeight;
-    //         let newBrightness = 100 * ratio;
-    //         let newBlur = 10 * ratio;
-    //         setCanvasWrapperStyle({
-    //             filter: `brightness(${100 - newBrightness}%) blur(${newBlur}px)`
-    //         })
-    //     }
-    // }, [scrollPos])
 
     const iconSize = {
         fontSize: "32px"
@@ -75,7 +55,7 @@ export default function Home() {
             </motion.div>
         </motion.div>
         <motion.div id="lottie" style={{opacity, scale}}>
-            <Lottie loop animationData={LottieAnimation}></Lottie>
+            <Lottie loop animationData={LottieAnimation}/>
         </motion.div>
         {/*<dotlottie-player src="https://lottie.host/embed/add80e3d-9c5b-4af6-8706-2357c7e76b25/F5hb2yqqi6.json"/>*/}
         <motion.div style={{opacity, position: "fixed", height: 100, bottom: 0, display: "flex", alignItems: "center", justifyContent: "center", width: "100%"}}>
