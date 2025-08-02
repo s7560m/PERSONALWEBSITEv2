@@ -1,9 +1,6 @@
 import {memo, useRef} from "react";
 import ProjectItem from "./ProjectItem";
 import Project from "../../../interfaces/ProjectInterface";
-// @ts-ignore
-import * as AOS from 'aos'
-import "aos/dist/aos.css";
 
 interface AppProps {
     projectArray: Array<Project>,
@@ -12,26 +9,6 @@ interface AppProps {
 
 function ProjectList({projectArray}: AppProps) {
     const projectRefs = useRef<Array<HTMLDivElement>>([]);
-
-    // function handleScroll() {
-    //     // adjusts progressbar for projects
-    //     // BUG: Some projects are too large for the viewport
-    //     // TODO: Fix this bug
-    // }
-    //
-    // useEffect(() => {
-    //
-    //     // initialize animation library
-    //     AOS.init({
-    //         offset: 0,
-    //         duration: 300,
-    //         easing: 'ease-in-quart',
-    //     });
-    //
-    //     window.addEventListener('scroll', handleScroll);
-    //
-    //     return () => window.removeEventListener('scroll', handleScroll);
-    // })
 
     // return a list of projects
     return <div id="projects-wrapper">
