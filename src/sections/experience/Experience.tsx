@@ -5,6 +5,7 @@ import {Card, CardContent, IconButton, Tooltip} from "@mui/material";
 import {motion, useScroll, useTransform} from "framer-motion";
 import {useEffect, useRef, useState} from "react";
 import {Email, LinkedIn} from "@mui/icons-material";
+import {useDarkMode} from "../../hooks/useDarkMode";
 export default function Experience() {
 
     const timelineItems: Array<TimelineItemInterface> = [
@@ -67,15 +68,16 @@ export default function Experience() {
     }
 
     const MARGIN_SIZE = "10px";
+    const {color, background} = useDarkMode()
     const iconButtonStying = {
         paddingLeft: 0,
         paddingRight: "6px",
         marginRight: MARGIN_SIZE,
-        color: "black"
+        color
     }
 
     return (
-        <div className={"experience"} ref={experienceRef}>
+        <div className={"experience"} ref={experienceRef} style={{ background, color }}>
         <div id="header-wrapper-experience">
             <motion.div id="header-experience-sideways" initial={{opacity: 0}} style={{opacity: experienceSidewaysOpacity}}>RELEVANT EXPERIENCE.</motion.div>
             <p id="header-experience">RELEVANT EXPERIENCE.</p>

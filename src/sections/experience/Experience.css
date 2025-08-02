@@ -31,7 +31,6 @@
     /*margin-top: 150px;*/
     font-weight: bold;
     font-size: 2rem;
-    color: black;
     width: max-content;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
@@ -43,7 +42,6 @@
     opacity: 0;
     transform: rotate(-90deg) translateY(-100px) translateX(-350px);
     font-size: 2rem;
-    color: black;
     width: max-content;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
@@ -67,12 +65,10 @@
 
 .header {
     padding-left: 30px;
-    color: black;
     font-family: "Plus Jakarta Sans", sans-serif
 }
 
 .header-2 {
-    color: black;
     padding: 30px 30px 30px;
 }
 
