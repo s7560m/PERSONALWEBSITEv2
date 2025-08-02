@@ -8,6 +8,7 @@ import Projects from "./sections/projects/Projects";
 import AboutMe from "./sections/About Me";
 import NavigationMobile from "./components/NavigationMobile";
 import {useThemeStore} from "./zustandStore";
+import {useDarkMode} from "./hooks/useDarkMode";
 
 function App() {
 
@@ -76,9 +77,11 @@ function App() {
             window.scrollTo(0, 0);
         }, [])
 
+        const {background, color} = useDarkMode()
+
         return (
           <ThemeProvider theme={theme}>
-            <div className="App">
+            <div className="App" style={{background, color}}>
                 <div id="navigation">
                     <Navigation navBtnEventListener={(section: string) => scrollToComponent(section, true)}/>
                 </div>

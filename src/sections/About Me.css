@@ -1,7 +1,7 @@
 #about-me {
     /*background-image: url("https://firebasestorage.googleapis.com/v0/b/personal-site-57ec2.appspot.com/o/images%2Ffancy-pants.jpg?alt=media&token=ba8dff08-eda7-4965-a01c-7ae6a36f2348");*/
     /*height: 100vh;*/
-    height: 80vh;
+    height: 100vh;
     margin-top: 20vh;
     /*height: 100vh;*/
 }
@@ -11,7 +11,6 @@
     width: max-content;
     /*position: relative;*/
     font-size: 2rem;
-    color: black;
     font-family: 'Plus Jakarta Sans', sans-serif;
     backdrop-filter: blur(4px);
     font-weight: bold;
