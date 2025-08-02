@@ -1,4 +1,4 @@
-import React, {CSSProperties, FC, memo, ReactFragment, useEffect, useLayoutEffect, useRef, useState} from 'react';
+import React, {CSSProperties, memo, useLayoutEffect, useRef, useState} from 'react';
 import './App.css';
 // @ts-ignore
 import * as Granim from 'granim';
@@ -33,12 +33,7 @@ function App() {
             bottom: "20px",
             position: "fixed"
         } as CSSProperties;
-
-        interface AppPropsProjects {
-            setValue?: Function
-        }
-
-        const [value, setValue] = useState<number>(0);
+    const [value, setValue] = useState<number>(0);
         const [showCircularProgress, setShowCircularProgress] = useState<boolean>(false);
         const circularProgressRef = useRef<HTMLDivElement>(null);
         const [aboutMeVisible, setAboutMeVisible] = useState<boolean>(false);

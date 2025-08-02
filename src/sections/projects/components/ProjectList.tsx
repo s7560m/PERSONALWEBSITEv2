@@ -1,7 +1,5 @@
-import {CSSProperties, memo, useEffect, useRef, useState} from "react";
-import {isInViewport} from "../../../hooks/useOnScreen";
+import {memo, useRef, useState} from "react";
 import ProjectItem from "./ProjectItem";
-import {CircularProgress} from "@mui/material";
 import Project from "../../../interfaces/ProjectInterface";
 // @ts-ignore
 import * as AOS from 'aos'
@@ -13,8 +11,6 @@ interface AppProps {
 }
 
 function ProjectList({projectArray}: AppProps) {
-    const [selectedIndex, setSelectedIndex] = useState<number>(0);
-    const [scrollPos, setScrollPos] = useState<number>(0);
     const projectRefs = useRef<Array<HTMLDivElement>>([]);
 
     // function handleScroll() {

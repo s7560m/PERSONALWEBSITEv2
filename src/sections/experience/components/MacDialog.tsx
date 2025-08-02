@@ -1,7 +1,7 @@
 import {Card, CardContent} from "@mui/material";
 import {CSSProperties} from "react";
 
-export default function MacDialog({title, description, image, leftDesktop, topDesktop, leftMobile, topMobile, zIndex}: {title: string, description?: string, image?: string, leftDesktop: number, topDesktop: number, leftMobile: number, topMobile: number, zIndex: number}) {
+export default function MacDialog({title, description, image, leftDesktop, topDesktop, zIndex}: {title: string, description?: string, image?: string, leftDesktop: number, topDesktop: number, leftMobile: number, topMobile: number, zIndex: number}) {
     function getContainerStyle(): CSSProperties {
         if (window.innerWidth >= 768) {
             return {position: "absolute", left: `${leftDesktop}vw`, top: `${topDesktop}vh`, zIndex}

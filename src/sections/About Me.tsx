@@ -1,9 +1,6 @@
 import './About Me.css'
-import {Card, CardContent, CardHeader} from "@mui/material";
-import {useEffect, useRef, useState} from "react";
-import useOnScreen from "../hooks/useOnScreen";
 import MacDialog from "./experience/components/MacDialog";
-export default function AboutMe({setAboutMeVisible}: {setAboutMeVisible: Function}) {
+export default function AboutMe() {
 
     return <div id="about-me">
         <div id="header-wrapper-aboutme">

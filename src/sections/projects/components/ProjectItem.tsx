@@ -1,5 +1,5 @@
 import './ProjectItem.css'
-import {Button, Card, CardContent, Paper} from "@mui/material";
+import {Button, Paper} from "@mui/material";
 import Project from "../../../interfaces/ProjectInterface";
 
 interface AppProps {
