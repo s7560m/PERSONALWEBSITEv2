@@ -1,6 +1,7 @@
 import './Projects.css'
 import Project from "../../interfaces/ProjectInterface";
 import ProjectList from "./components/ProjectList";
+
 import {
     motion,
     useAnimationFrame,
@@ -11,6 +12,7 @@ import {
     useVelocity,
     wrap
 } from 'framer-motion';
+import {useRef} from "react";
 export default function Projects() {
 
     const projectArray: Array<Project> = [
