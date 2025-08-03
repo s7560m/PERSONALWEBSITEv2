@@ -11,7 +11,7 @@ import {memo, useState} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 import DarkModeSwitch from "./DarkModeSwitch";
 import {useDarkMode} from "../hooks/useDarkMode";
-import {useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router";
 
 interface AppProps {
     navBtnEventListener: Function

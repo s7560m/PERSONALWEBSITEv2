@@ -9,7 +9,7 @@ import AboutMe from "./sections/About Me";
 import NavigationMobile from "./components/NavigationMobile";
 import {useThemeStore} from "./zustandStore";
 import {useDarkMode} from "./hooks/useDarkMode";
-import {Routes, Route, BrowserRouter, useNavigate} from "react-router-dom";
+import {Routes, Route, BrowserRouter} from "react-router";
 import Blog from "./sections/blog/blog";
 
 function App() {
