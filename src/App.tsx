@@ -1,14 +1,16 @@
-import React, {CSSProperties, memo, useLayoutEffect, useMemo, useRef, useState} from 'react';
+import React, {memo, useLayoutEffect, useMemo, useRef} from 'react';
 import './App.css';
 import Home from "./sections/home/Home";
 import Navigation from "./components/Navigation";
-import {CircularProgress, createTheme, ThemeProvider} from "@mui/material";
+import {createTheme, ThemeProvider} from "@mui/material";
 import Experience from "./sections/experience/Experience";
 import Projects from "./sections/projects/Projects";
 import AboutMe from "./sections/About Me";
 import NavigationMobile from "./components/NavigationMobile";
 import {useThemeStore} from "./zustandStore";
 import {useDarkMode} from "./hooks/useDarkMode";
+import {Routes, Route, BrowserRouter, useNavigate} from "react-router-dom";
+import Blog from "./sections/blog/blog";
 
 function App() {
 
@@ -28,27 +30,6 @@ function App() {
             }
         }
     }), [darkMode])
-
-        const circularProgressStyle = {
-            right: "20px",
-            bottom: "20px",
-            position: "fixed"
-        } as CSSProperties;
-    const [value] = useState<number>(0);
-        const [showCircularProgress] = useState<boolean>(false);
-        const circularProgressRef = useRef<HTMLDivElement>(null);
-        const [aboutMeVisible] = useState<boolean>(false);
-        function getCircularProgressClass() {
-            if (aboutMeVisible) return "hide-circular-progress";
-
-            if (showCircularProgress) return "show-circular-progress"
-
-            if (["show-circular-progress", "hide-circular-progress"].indexOf(circularProgressRef.current?.className as string) > -1) {
-                return "hide-circular-progress"
-            }
-
-            return "init-circular-progress-class"
-        }
 
         const homeRef = useRef<HTMLDivElement>(null);
         const experienceRef = useRef<HTMLDivElement>(null);
@@ -81,30 +62,33 @@ function App() {
 
         return (
           <ThemeProvider theme={theme}>
-            <div className="App" style={{background, color}}>
-                <div id="navigation">
-                    <Navigation navBtnEventListener={(section: string) => scrollToComponent(section, true)}/>
-                </div>
-                <div id="navigation-mobile">
-                    <NavigationMobile navBtnEventListener={(section: string) => scrollToComponent(section, false)}/>
-                </div>
-                <div ref={homeRef}>
-                    <Home/>
-                </div>
-                <div ref={experienceRef}>
-                    <Experience/>
-                </div>
-                <div ref={projectRef}>
-                    <Projects/>
-                </div>
-                <div ref={aboutRef}>
-                    <AboutMe/>
-                </div>
-            </div>
-              {window.innerWidth > 1030 && <div ref={circularProgressRef} style={circularProgressStyle} className={getCircularProgressClass()}>
-                  <CircularProgress size={"60px"} color={"secondary"} thickness={10} value={value} variant="determinate"/>
-              </div>}
-
+          <BrowserRouter>
+            <Routes>
+                <Route key="home" path="/" element={
+                    <div className="App" style={{background, color}}>
+                        <div id="navigation">
+                            <Navigation navBtnEventListener={(section: string) => scrollToComponent(section, true)}/>
+                        </div>
+                        <div id="navigation-mobile">
+                            <NavigationMobile
+                                navBtnEventListener={(section: string) => scrollToComponent(section, false)}/>
+                        </div>
+                        <div ref={homeRef}>
+                            <Home/>
+                        </div>
+                        <div ref={experienceRef}>
+                            <Experience/>
+                        </div>
+                        <div ref={projectRef}>
+                            <Projects/>
+                        </div>
+                        <div ref={aboutRef}>
+                            <AboutMe/>
+                        </div>
+                    </div>}/>
+                <Route key="blog" path="/blog" element={<Blog/>}/>
+            </Routes>
+          </BrowserRouter>
           </ThemeProvider>
         );
 }
