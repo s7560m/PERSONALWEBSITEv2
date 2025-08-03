@@ -1,4 +1,4 @@
-import React, {memo, useLayoutEffect, useMemo, useRef} from 'react';
+import React, {memo, useEffect, useLayoutEffect, useMemo, useRef} from 'react';
 import './App.css';
 import Home from "./sections/home/Home";
 import Navigation from "./components/Navigation";
@@ -58,14 +58,18 @@ function App() {
             window.scrollTo(0, 0);
         }, [])
 
-        const {background, color} = useDarkMode()
+        useEffect(() => {
+            document.body.className = darkMode ? "dark" : "light";
+        }, [darkMode]);
+
+        const {color} = useDarkMode()
 
         return (
           <ThemeProvider theme={theme}>
           <BrowserRouter>
             <Routes>
                 <Route key="home" path="/" element={
-                    <div className="App" style={{background, color}}>
+                    <div className="App" style={{color}}>
                         <div id="navigation">
                             <Navigation navBtnEventListener={(section: string) => scrollToComponent(section, true)}/>
                         </div>
