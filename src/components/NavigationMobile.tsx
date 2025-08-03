@@ -25,7 +25,6 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
         // dispatch callback to allow app to scroll to component
         navBtnEventListener(section);
         setShowDialog(false);
-        // setTimeout(() => setShowDialog(false), 100);
     }
 
     const {scrollY} = useScroll();
@@ -56,9 +55,9 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
                 </DialogTitle>
                 <DialogContent>
                     <Button color={"secondary"} variant="outlined" onClick={() => scroll("home")} sx={buttonStyling}>Home</Button>
+                    <Button color={"secondary"} variant="outlined" onClick={() => navigate("/blog")} sx={buttonStyling}>Blog</Button>
                     <Button color={"secondary"} variant="outlined" onClick={() => scroll("experience")} sx={buttonStyling}>Experience</Button>
                     <Button color={"secondary"} variant="outlined" onClick={() => scroll("projects")} sx={buttonStyling}>Projects</Button>
-                    <Button color={"secondary"} variant="outlined" onClick={() => navigate("/blog")} sx={buttonStyling}>Blog</Button>
                     <Button color={"secondary"} variant="outlined" onClick={() => scroll("about")} sx={buttonStyling}>About</Button>
                     <Button color={"secondary"} variant="outlined" onClick={() => window.open(resumeLink)} sx={buttonStyling}>Resume</Button>
                 </DialogContent>
