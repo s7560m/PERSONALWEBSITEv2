@@ -4,6 +4,7 @@ import {useRef} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 import DarkModeSwitch from "./DarkModeSwitch";
 import {useDarkMode} from "../hooks/useDarkMode";
+import {useNavigate} from "react-router";
 
 interface AppProps {
     navBtnEventListener: Function
@@ -20,6 +21,8 @@ export default function Navigation({navBtnEventListener}: AppProps) {
         navBtnEventListener(section);
     }
 
+    const navigate = useNavigate()
+
     const opacity = useTransform(scrollY, [0, window.innerHeight * 0.5, window.innerHeight], [0, 0, 1])
     return (
         <div style={{background}} className={"app-bar"}>
@@ -35,6 +38,7 @@ export default function Navigation({navBtnEventListener}: AppProps) {
             }}/>
             <div>
             <Button onClick={() => scroll("home")} sx={buttonStyle} className={"button"} color={"info"}>Home</Button>
+            <Button onClick={() => navigate("/blog")} sx={buttonStyle} color={"info"}>Blog</Button>
             <Button onClick={() => scroll("experience")} sx={buttonStyle} color={"info"}>Experience</Button>
             <Button onClick={() => scroll("projects")} sx={buttonStyle} color={"info"}>Projects</Button>
             <Button onClick={() => scroll("about")} sx={buttonStyle} color={"info"}>About Me</Button>

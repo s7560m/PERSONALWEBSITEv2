@@ -11,6 +11,7 @@ import {memo, useState} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 import DarkModeSwitch from "./DarkModeSwitch";
 import {useDarkMode} from "../hooks/useDarkMode";
+import {useNavigate} from "react-router";
 
 interface AppProps {
     navBtnEventListener: Function
@@ -34,6 +35,7 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
     const {background, color, darkModeBtnStyles} = useDarkMode()
     const buttonStyling = {...darkModeBtnStyles, height: "80px", fontSize: "20px", width: "100%", marginBottom: "20px", fontFamily: "Plus Jakarta Sans, Sans Serif"};
     const resumeLink = "https://docs.google.com/document/d/1-SQ0mGyEKzCh1-IHYhcb6lSypipgKnZHHGW58N28KU4/edit?usp=sharing"
+    const navigate = useNavigate()
     return (
         <>
             <div className={"app-bar-mobile"} style={{position: "fixed", top: 0, zIndex: 5, padding: 8}}>
@@ -56,6 +58,7 @@ function NavigationMobile({navBtnEventListener}: AppProps) {
                     <Button color={"secondary"} variant="outlined" onClick={() => scroll("home")} sx={buttonStyling}>Home</Button>
                     <Button color={"secondary"} variant="outlined" onClick={() => scroll("experience")} sx={buttonStyling}>Experience</Button>
                     <Button color={"secondary"} variant="outlined" onClick={() => scroll("projects")} sx={buttonStyling}>Projects</Button>
+                    <Button color={"secondary"} variant="outlined" onClick={() => navigate("/blog")} sx={buttonStyling}>Blog</Button>
                     <Button color={"secondary"} variant="outlined" onClick={() => scroll("about")} sx={buttonStyling}>About</Button>
                     <Button color={"secondary"} variant="outlined" onClick={() => window.open(resumeLink)} sx={buttonStyling}>Resume</Button>
                 </DialogContent>
