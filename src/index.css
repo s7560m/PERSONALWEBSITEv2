@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  /*background-color: white;*/
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
@@ -8,6 +8,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.light {
+  background-color: white;
+}
+
+body.dark {
+  background-color: black;
 }
 
 code {
